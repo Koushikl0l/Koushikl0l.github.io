@@ -57,8 +57,8 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  /*background-color: #fff;*/
-  background-image: url("/images/spider.jpg");
+  background-color: #fff;
+  
  
 }
 
@@ -8213,7 +8213,9 @@ h1, h2, h3, h4, h5,
   margin: 40px 0; }
 
 .wrapper {
-  width: 100%; }
+  width: 100%;
+background-image: url("../images/spider.jpg");
+}
 
 #sidebar {
   min-width: 300px;
