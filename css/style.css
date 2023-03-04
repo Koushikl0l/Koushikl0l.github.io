@@ -57,7 +57,10 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff; }
+  /*background-color: #fff;*/
+  background-image: url('data:spider.jpg');
+  background-repeat: no-repeat;
+}
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
