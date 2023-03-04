@@ -58,7 +58,7 @@ body {
   color: #212529;
   text-align: left;
   /*background-color: #fff;*/
-  background-image: url("..\images\spider.jpg");
+  background-image: url("./images/spider.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: 100% 100%;
