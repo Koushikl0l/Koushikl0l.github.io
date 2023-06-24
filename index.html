@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BrainAI</title>
+    <!--
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/unicons.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    -->
+    <link rel="stylesheet"  href="{{ url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet"  href="{{ url_for('static',filename='css/unicons.css')}}">
+    <link rel="stylesheet"  href="{{ url_for('static',filename='css/owl.carousel.min.css')}}">
+    <link rel="stylesheet"  href="{{ url_for('static',filename='css/owl.theme.default.min.css')}}">
+
+    <!-- MAIN STYLE -->
+
+    <link rel="stylesheet"  href="{{ url_for('static',filename='css/tooplate-style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+<!--
+
+
+
+-->
+  </head>
+  <body>
+
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="https://brainai.herokuapp.com"><i class='uil uil-user'></i> BrainAI</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link"><span data-hover="About">About</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://brainai-projects.herokuapp.com" class="nav-link"><span data-hover="Projects">Projects</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://docs.google.com/document/d/1ef69uLtQDS0EtdW_hyo3ymwlGlwr_g14ICA-NkrpJzI/edit?usp=sharing" class="nav-link"><span data-hover="Resume">Resume</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
+                    </li>
+                </ul>
+                <!--
+                <ul class="navbar-nav ml-lg-auto">
+                    <div class="ml-lg-4">
+                      <div class="color-mode d-lg-flex justify-content-center align-items-center">
+                        <i class="color-mode-icon"></i>
+                        Color mode
+                      </div>
+                    </div>
+                </ul>
+              -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- ABOUT -->
+    <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
+                    <div class="about-text">
+                        <small class="small-text">Welcome to <span class="mobile-block">my portfolio website!</span></small>
+                        <h1 class="animated animated-text">
+                            <span class="mr-2">Hey folks, I'm</span>
+                                <div class="animated-info">
+                                    <span class="animated-item">Koushik Ahmed</span>
+                                    <span class="animated-item">ML Practitioner</span>
+                                    <span class="animated-item">Web Designer</span>
+                                </div>
+                        </h1>
+
+                        <p>Building a successful product is a challenge. I am  Passionate in building new AI projects and deep dive in research 
+                          also have experiences in web development.</p>
+                        
+                        <div class="custom-btn-group mt-4">
+                          <a href="https://github.com/koushik1234/portfolio/raw/main/templates/_Kosuhik%20CV.pdf" download  class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
+                          <!--<a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Get a free quote</a>-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-12 col-12">
+                    <div class="about-image svg">
+                       <!-- <img src="static/images/undraw/undraw_software_engineer_lvl5.svg" class="img-fluid" alt="svg image"> -->
+                       <img src="static/images/undraw/my_svg.svg" class="img-fluid" alt="svg image">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="project py-5" id="project">
+        <div class="container">
+                
+                <div class="row">
+                  <div class="col-lg-11 text-center mx-auto col-12">
+
+                      <div class="col-lg-8 mx-auto">
+                        <h2>Things I have designed -</h2>
+                      </div>
+
+                      <div class="owl-carousel owl-theme">
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="static/images/project/2.png" class="img-fluid" alt="project image">
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="static/images/project/sales_insight.PNG" class="img-fluid" alt="project image">
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="static/images/project/4.png" class="img-fluid" alt="project image">
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="static/images/project/1.png" class="img-fluid" alt="project image">
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="static/images/project/5.png" class="img-fluid" alt="project image">
+                          </div>
+                        </div>
+                        
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="static/images/project/Customer.png" class="img-fluid" alt="project image">
+                          </div>
+                        </div>
+                        
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="static/images/project/pf.PNG" class="img-fluid" alt="project image">
+                          </div>
+                        </div>
+                        
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="static/images/project/3.png" class="img-fluid" alt="project image">
+                          </div>
+                        </div>
+                        
+                      </div>
+
+                  </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12">
+                  <h2 class="mb-4">Skills</h2>
+
+                    <div class="timeline">
+                        <div class="timeline-wrapper">
+                             <div class="timeline-yr">
+                                  <span>1</span>
+                             </div>
+                             <div class="timeline-info">
+                                  <h3><span>Web app designer</span><small>AgriAI</small></h3>
+                                  <p>When it's a matter of production webapp comes with a friendly approach 
+                                    that brings you on a ML modeling with development</p>
+                             </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>2</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Web Designer</span><small>BrainAI</small></h3>
+                                <p>Here we focus on simple designing based approach whitch ends with html5,js and css.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>3</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>ML Enthusiast</h3>
+                                <p>It's been 5 year i have been working on machine learning.I preety much like projects involving
+                                  machine learning as it is an intelligent system that enhance not only human but also advances everyday living.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>4</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Data Science<small>Carbon-emission Analysis</small></h3>
+                                <p>Analysis on Nasa's geo,meteorological data of getting any location in earth's 
+                                  co2 emission contribution rates and effects.Here we can visualize emission rates and effets
+                                  and the location from where it's emanate. 
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                  <h2 class="mb-4 mobile-mt-2">Internship & Awards</h2>
+
+                    <div class="timeline">
+                        <div class="timeline-wrapper">
+                             <div class="timeline-yr">
+                                  <span>2019</span>
+                             </div>
+                             <div class="timeline-info">
+                                  <h3><span>Infosis</span><small>ML Engineer</small></h3>
+                                  <p>Build a web app through server and application log along with a GAN -modeling.</p>
+                             </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>2019</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>The Duke of Edinburgh's Award</span><small>Bronze</small></h3>
+                                <p><a rel="nofollow" href="https://www.facebook.com/"></a> The Duke of Edinburgh's Award is a youth awards programme founded by Prince Philip, Duke of Edinburgh </p>
+                            </div>
+                        </div>
+                        
+                        
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact py-5" id="contact">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-lg-5 mr-lg-5 col-12">
+            <div class="google-map w-100">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3650.3735090432497!2d90.37241961451228!3d23.80531369259426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1638157936469!5m2!1sen!2sbd" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+            </div>
+
+            <div class="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
+                <div class="contact-info-item">
+                  <h3 class="mb-3 text-white">Say hello</h3>
+                  <p class="footer-text mb-0"><a href="https://www.linkedin.com/in/koushikahamed1234/"</a>koushikahamed1234</p>
+                  <p  class="footer-text mb-0"> <a href="https://github.com/koushik1234"</a>koushik1234</p>
+                  <p><a href="mailto:koushikkushal95@gmail.com">brainai247@gmail.com</a></p>
+                </div>
+
+                <ul class="social-links">
+                    <li><a href="https://www.linkedin.com/in/koushikahamed1234/" class="fa fa-linkedin" style="font-size:18px" data-toggle="tooltip" data-placement="left" title="LinkedIn"></a></li>
+                     <li><a href="https://github.com/koushik1234" class="fa fa-github" style="font-size:18px" data-toggle="tooltip" data-placement="left" title="github"></a></li>
+                     
+                     
+                </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-12">
+            <div class="contact-form">
+              <h2 class="mb-4">Interested to work together? Let's talk</h2>
+
+              <form action="mailto:brainai247@gmail.com" method="post" enctype="text/plain">
+                <!--<form action="mailto:someone@example.com" method="post" enctype="text/plain">-->
+                <div class="row">
+                  <div class="col-lg-6 col-12">
+                    <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
+                  </div>
+
+                  <div class="col-lg-6 col-12">
+                    <input type="email" class="form-control" name="email" placeholder="Email" id="email">
+                  </div>
+
+                  <div class="col-12">
+                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
+                  </div>
+
+                  <div class="ml-lg-auto col-lg-5 col-12">
+                    <input type="submit" class="form-control submit-btn" value="Send">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+     <footer class="footer py-5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-lg-12 col-12">                                
+                        <p class="copyright-text text-center">Copyright &copy; 2019 BrainAI . All rights reserved</p>
+                        <p class="copyright-text text-center">Designed by <a rel="nofollow" href="https://github.com/koushik1234">Koushik Ahmed</a></p>
+                    </div>
+                    
+               </div>
+          </div>
+     </footer>
+
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/Headroom.js"></script>
+    <script src="static/js/jQuery.headroom.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/smoothscroll.js"></script>
+    <script src="static/js/custom.js"></script>
+          
+    <!-- Start of ChatBot (www.chatbot.com) code -->
+<script type="text/javascript">
+    window.__be = window.__be || {};
+    window.__be.id = "61a59b091517550007b6065a";
+    (function() {
+        var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+        be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+    })();
+</script>
+<!-- End of ChatBot code -->
+
+  </body>
+</html>
