@@ -31,13 +31,108 @@
 
 
 -->
+
+
+<script>
+
+  
+    function myFunction() {
+      var x = document.getElementById("btn");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+
+    }
+    
+
+
+
+</script>
+
+
+
+
+
+
+
+
+<style>
+
+
+#myDIV {
+
+  width: 100%;
+  padding: 50px 0;
+  text-align: left;
+  background-color: white;
+  margin-top: 20px;
+  margin-left: 35px;
+  margin-right:50px;
+  color:black;
+  font-size: 18px;
+  
+}
+
+/*
+a:link, a:visited {
+  background-color: #7f140d;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: blueviolet;
+}
+#btn{
+
+  background-color: #7f140d;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+*/
+
+#onbtn{
+
+  background-color: #7f140d;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 20px;
+
+}
+#btn{
+
+  width: 100%;
+  padding: 50px 0;
+  text-align: left;
+  background-color: white;
+  margin-top: 20px;
+  
+  margin-left: 35px;
+  margin-right:50px;
+  color:black;
+  font-size: 18px;
+}
+
+</style>
   </head>
   <body>
 
     <!-- MENU -->
     <nav class="navbar navbar-expand-sm navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="https://brainai.herokuapp.com"><i class='uil uil-user'></i>Koushik.Portfolio
+            <a class="navbar-brand" href="https://brainai.herokuapp.com"><i class='uil uil-user'></i>Koushik Ahmed Kushal
             
             </a>
 
@@ -64,7 +159,7 @@
                     </li>
                   
                     <li class="nav-item">
-                        <a href="https://medium.com/@koushikkushal95" class="nav-link"><span data-hover="Contact">Follow me.@Medium</span></a>
+                        <a href="https://medium.com/@koushikkushal95" class="nav-link"><span data-hover="Medium">Follow me.@Medium</span></a>
                     </li>
                 </ul>
                 <!--
@@ -80,7 +175,7 @@
             </div>
         </div>
     </nav>
-
+    <hr>
     <!-- ABOUT -->
     <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
         <div class="container">
@@ -88,18 +183,18 @@
                 
                 <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
                     <div class="about-text">
-                        <small class="small-text">Welcome to <span class="mobile-block">my portfolio website!</span></small>
+                        <small class="small-text">Welcome to <span class="mobile-block">my portfolio.</span></small>
                         <h1 class="animated animated-text">
-                            <span class="mr-2">Hey folks, I'm</span>
+                            <span class="mr-2">Hello there, I am</span>
                                 <div class="animated-info">
                                     <span class="animated-item">Koushik Ahmed</span>
                                     <span class="animated-item">ML Practitioner</span>
-                                    <span class="animated-item">Web Designer</span>
+                                    <span class="animated-item">End to End ML Developer</span>
                                 </div>
                         </h1>
 
                         <p>Building a successful product is a challenge. I am  Passionate in building ML tools and deep dive in research 
-                          also have experiences in web development.</p>
+                          also have experiences in data visualization and end to ML application deployment.</p>
                         
                         <div class="custom-btn-group mt-4">
                           <a href="https://github.com/koushik1234/portfolio/raw/main/templates/_Kosuhik%20CV.pdf" download  class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
@@ -118,7 +213,7 @@
             </div>
         </div>
     </section>
-
+    <hr>
     <!-- PROJECTS -->
     <section class="project py-5" id="project">
         <div class="container">
@@ -221,7 +316,7 @@
                 </div>
         </div>
     </section>
-
+    <hr>
     <!-- FEATURES -->
     <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
         <div class="container">
@@ -320,6 +415,55 @@
         </div>
     </section>
 
+    
+          <div id=myDIV>
+              <h2><hr>Recently Working</h2>
+              <h3 style="color:black">title: Question Answering From Visual Inputs</h3>
+              <h3 style="color: #7f140d;">Workflows</h3>
+              <p style="font-size: 18px;"><b>A mulple input model</b></p>
+              <ul>
+                  <li>&nbsp;&nbsp;  * Use a CNN to embed the image</li>
+                  <li>&nbsp;&nbsp;  * Use a LSTM to embed the question</li>
+                  <li>&nbsp;&nbsp;  * word vectors</li>
+                  <li>&nbsp;&nbsp;  * Concatenate</li>
+                  <li>&nbsp;&nbsp;  * Classify with Dense layers per usual</li>
+              </ul>
+              <hr>
+              
+              <p style="color: black;">Visual question answering (VQA) is a machine learning problem in which a model is asked to answer a question concerning an image or series of images. Traditional visual QA approaches necessitate a substantial amount of labelled training data, which includes thousands of human-annotated question-answer pairs connected with images. Developments in large-scale pre-training in recent years have resulted in the development of VQA algorithms that work effectively with fewer than fifty training examples (few-shot) and without any human-annotated VQA training data (zero-shot). </p>
+              <p><u>Related Paper </u></p>
+              <li><a href="https://arxiv.org/abs/1505.00468">https://arxiv.org/abs/1505.00468</a></li>
+              <li><a href="https://arxiv.org/abs/2307.10405">https://arxiv.org/abs/2307.10405</a></li>
+              
+              
+          </div>
+          
+          <button onclick="myFunction()" id="onbtn">Read more</button>
+          <hide1 id="btn" style="display:none;">
+
+            <h2 id="Model-Idea">Model Idea<a class="anchor-link" href="#Model-Idea"></a></h2><p style="color: black;">This uses a classical CNN-LSTM  model like shown below, where Image features and language features are computed separately and combined together and a multi-layer perceptron is trained on the combined features.</p>
+            <p style="color: black;">Similar models have been presented at following links, this work takes ideas from them.</p>
+            <ol>
+            <li><a href="https://ai.googleblog.com/2023/07/modular-visual-question-answering-via.html">https://ai.googleblog.com/2023/07/modular-visual-question-answering-via.html</a></li>
+            <li><a href="https://github.com/avisingh599/visual-qa">https://github.com/avisingh599/visual-qa</a></li>
+            <li><a href="https://github.com/VT-vision-lab/VQA_LSTM_CNN">https://github.com/VT-vision-lab/VQA_LSTM_CNN</a></li>
+            </ol>
+            
+          <p><center><img src="http://i.imgur.com/Za5P1ZZ.png" width="1200" height="500"></center><a href="http://arxiv.org/pdf/1505.00468v4.pdf" >Source</a></p>
+            
+            <h2 id="Pretrained-VGG-Net-(VGG-16)">Pretrained VGG Net (VGG-16)<a class="anchor-link" href="#Pretrained-VGG-Net-(VGG-16)"></a></h2><p style="color: black;">While VGG Net is not the best CNN model for image features, GoogLeNet (winner 2014) and ResNet (winner 2015) have superior classification scores, but VGG Net is very versatile, simple, relatively small and more importantly portable to use.</p>
+            <p style="color: black;">For reference here is the VGG 16 performance on ILSVRC-2012</p>
+            <center><img src="http://www.robots.ox.ac.uk/~vgg/research/very_deep/images/table_ILSVRC.png" width="700" height="250"></center>
+
+
+
+          </hide1>
+<hr>
+
+
+
+
+
     <!-- CONTACT -->
     <section class="contact py-5" id="contact">
       <div class="container">
@@ -349,6 +493,11 @@
                 </ul>
             </div>
           </div>
+
+
+
+
+
 
           <div class="col-lg-6 col-12">
             <div class="contact-form">
@@ -380,7 +529,7 @@
         </div>
       </div>
     </section>
-
+    <hr>
     <!-- FOOTER -->
      <footer class="footer py-5">
           <div class="container">
