@@ -464,10 +464,10 @@ a:hover, a:active {
           </br>
             <p style="color: rgb(72, 25, 213);">Model Insight:</p>
             <p style="color: black;">We have trained our model with only 9% of ms-coco datapoints where train - 40,000 samples 
-              with 10,000 of validation samples.Datasamples are splited with stratified techniques.Custom Image augmentation 
+              with 10,000 of validation samples and 10,000 test samples.Datasamples are splited with stratified techniques.Custom Image augmentation 
               applied to enhence model capacity of image  feature understanding.Though initialize class weight to
             reduce bias of models it down-performs.We built custom datagenerator to split the performance on cpu based
-            computatation.</p>
+            computatation.Before final layer,added 2 bidirectional LSTM layer on top of Attention layer to keep recurrence active.</p>
             <p style="color: rgb(72, 25, 213);"><u>Image-size</u>:(224 X 224 X 3)</p>
             <p style="color: rgb(72, 25, 213);"><u>Batch size</u>:32</p>
             <p style="color: rgb(72, 25, 213);"><u>Word Embedding:</u>:256</p>
