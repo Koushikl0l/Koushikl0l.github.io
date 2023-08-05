@@ -5,30 +5,20 @@ Tooplate 2115 Marvel
 https://www.tooplate.com/view/2115-marvel
 
 */
-@import url(https://fonts.googleapis.com/css?family=Roboto:900|Roboto+Mono:300,400,700);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
 
 @import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,700");
 body {
   font-family: "Maven Pro", sans-serif;
   padding-top: 70px;
 }
-.body-image{
 
-
-  width: 100%;
-  height: 100%;
-  
-  
-  
-}
 .full-screen {
   padding: 8rem 0;
 }
 
-
 .small-text {
-  color: #050404;
+  color: #5b5b5b;
   font-size: 14px;
   font-weight: bold;
   padding: 8px 16px;
@@ -125,13 +115,12 @@ b, strong {
   position: relative;
 }
 
-
 .animated-item {
-  color: hsl(63, 91%, 59%);
+  color: #f4f3ef;
 }
 
 .animated-item {
-  font-size: 30px;
+  font-size:54px;
   line-height: inherit;
   display: block;
   opacity: 0;
@@ -493,7 +482,6 @@ b, strong {
 
   .about-image {
     margin-top: 4em;
-
   }
 
   .mobile-mt-2,
@@ -515,7 +503,7 @@ b, strong {
   }
 
   .animated-item {
-    font-size: 25px;
+    font-size: 40px;
   }
 
   .navbar-collapse {
@@ -533,7 +521,7 @@ b, strong {
 		min-width: 200px;
 	}
   .animated-item {
-    font-size: 25px;
+    font-size: 40px;
   }
 
   .custom-btn-group {
@@ -560,7 +548,6 @@ b, strong {
   }
 
   .about-text {
-    
     text-align: center;
   }
 
