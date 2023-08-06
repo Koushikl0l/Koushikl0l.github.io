@@ -519,6 +519,29 @@ a:hover, a:active {
             <p style="color: rgb(72, 25, 213);">Current model performance:</p>
             <center><img src="https://i.postimg.cc/DwX44XLL/Screenshot-2023-08-04-at-5-46-40-PM.png" alt="Girl in a jacket" width="1200" height=480"></center>
           </br>
+
+            <p style="color: rgb(72, 25, 213);">Challenges:</p>
+          <p style="color: black;">
+            One of the challenges with working with ms-coco datasets is the large class imbalance present in the datasets.
+            Ideally, we would train our model using an evenly balanced dataset so that all the class attribute of
+            training cases would contribute equally to the loss.If we use a normal cross-entropy loss 
+            function with a highly unbalanced dataset, as we are seeing here, then the algorithm will 
+            be incentivized to prioritize the majority class, since it 
+            contributes more to the loss.
+
+          </p>
+          <center><img src="https://i.postimg.cc/DZxS340D/Screenshot-2023-08-06-at-12-14-55-AM.png" alt="Girl in a jacket" width="1100" height=80"></center>
+
+          <p style="color: black;">
+             applying weighted labels within
+             each class would have the same aggregate contribution to the loss function.
+             Recall that for the multi-class loss, we add up the average loss for each individual class. Note 
+             that we also want to add a small value, epsilon, to the predicted values before taking their logs. This is 
+             simply to avoid a numerical error that would otherwise occur if the predicted value happens to be 
+             zero. 
+
+
+          </p>
             <p style="color: rgb(129, 28, 12);">Update coming soon....</p>
 
           </hide1>
