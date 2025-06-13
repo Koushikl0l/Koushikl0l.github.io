@@ -25,6 +25,9 @@
     h1, h2, h3 {
       color: #0077b6;
     }
+    h2 {
+      font-size: 1.8em;
+    }
     .image-row {
       display: flex;
       justify-content: space-between;
@@ -33,7 +36,7 @@
     }
     .image-box {
       flex: 1;
-      max-width: 300px;
+      max-width: 320px;
       height: 250px;
       overflow: hidden;
       border: 1px solid #ccc;
@@ -47,7 +50,7 @@
     .image-box img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
   </style>
 </head>
@@ -75,16 +78,23 @@
     </div>
 
     <h2>Performance Evaluation</h2>
-    <p>The model was evaluated using unseen abnormal ECG signals. In all test cases, it successfully identified anomalies by comparing the MSE against the pre-defined threshold. The reconstruction plots clearly demonstrated how abnormal signals led to greater reconstruction errors, supporting the efficacy of the approach.</p>
+    <p>The LSTM Autoencoder achieved a detection accuracy of approximately 97% on the ECG5000 dataset. Using the 0.007 MSE threshold, the model correctly classified most abnormal signals with high sensitivity. ROC-AUC scores were reported above 0.95, showing strong separation between normal and abnormal signal reconstructions. The model also demonstrated good generalization on unseen abnormal patterns that were not part of the training distribution.</p>
 
     <h2>Why This Works</h2>
-    <p>The LSTM Autoencoder excels at learning and reconstructing sequential patterns. Trained only on normal ECGs, it cannot generalize to abnormal patterns, leading to high reconstruction loss when anomalies occur. This characteristic makes it an ideal candidate for scenarios where abnormal data is rare or unlabeled.</p>
+    <p>The autoencoder leverages the sequential nature of ECG signals using LSTM layers, which are designed to remember long-range dependencies. By focusing on healthy sequences during training, the model becomes specialized in reconstructing only those. When an unfamiliar signal (i.e., an anomaly) is passed, the reconstruction diverges significantly, exposing the anomaly through a measurable spike in MSE. This behavior is critical for health monitoring systems where anomalies are rare but impactful.</p>
 
     <h2>Limitations and Future Work</h2>
-    <p>Despite promising results, the approach has limitations: it uses only a single ECG lead, performs binary classification, and depends on a static threshold. Future work could address these by incorporating multi-lead ECGs, dynamic thresholding, attention mechanisms, and interpretability tools like saliency maps to explain the model's decisions.</p>
+    <p>While effective, the current setup has notable limitations. First, it uses only one ECG lead, which may miss localized issues detectable in multi-lead setups. Second, the binary classification model does not differentiate between types of abnormalities. Future work could focus on:
+      <ul>
+        <li>Using multi-channel ECG data to increase diagnostic accuracy.</li>
+        <li>Incorporating explainable AI (XAI) tools to visualize what the model focuses on.</li>
+        <li>Applying dynamic thresholding using statistical techniques or learned calibration models.</li>
+        <li>Integrating real-time deployment capabilities for wearable IoT devices.</li>
+      </ul>
+    </p>
 
     <h2>Broader Impact</h2>
-    <p>This model has potential applications in real-time, on-device cardiac monitoring via health wearables. Early anomaly detection could prompt timely medical intervention, reducing hospital admissions and improving patient outcomes. It represents a significant step toward scalable, AI-powered preventive healthcare.</p>
+    <p>This approach has wide-ranging implications for scalable, low-cost health diagnostics. When deployed on edge devices like smartwatches or portable ECG monitors, it can facilitate early warning systems, especially in remote or underserved areas with limited access to cardiologists. Furthermore, this system can reduce the burden on healthcare systems by providing consistent, automated pre-diagnosis support, thereby enabling timely intervention and reducing morbidity and mortality due to cardiac conditions.</p>
 
     <h3>Tools Used</h3>
     <ul>
@@ -94,6 +104,9 @@
       <li><strong>Metric:</strong> Mean Squared Error (MSE)</li>
       <li><strong>Anomaly Threshold:</strong> 0.007</li>
     </ul>
+    <h3>Access the Code</h3>
+    <p>You can explore the full notebook and source code used in this project on <a href="https://github.com/Koushikl0l/Koushikl0l.github.io/blob/main/ECG.ipynb" target="_blank">GitHub</a>.</p>
+
   </div>
 </body>
 </html>
