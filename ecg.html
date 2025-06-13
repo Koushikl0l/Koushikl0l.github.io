@@ -19,7 +19,7 @@
       padding: 2em;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      max-width: 750px;
+      max-width: 850px;
       width: 100%;
     }
     h1, h2, h3 {
@@ -56,13 +56,11 @@
     <h1>ECG Anomaly Detection Using LSTM Autoencoders</h1>
     <p><strong>A Deep Learning Approach to Health Signal Reconstruction and Outlier Detection</strong></p>
 
-    <p>Electrocardiography (ECG) is one of the most common and vital non-invasive methods to evaluate the heart’s condition. It provides insight into the electrical activity of the heart over time and is frequently used to detect arrhythmias, myocardial infarctions, and other cardiovascular abnormalities. However, manual inspection of ECG signals is labor-intensive and prone to subjectivity, particularly when dealing with massive volumes of data from wearable sensors or hospital monitors. To address this, machine learning—particularly deep learning—offers a promising way to automate the identification of abnormalities and support early diagnosis.</p>
+    <p>Electrocardiography (ECG) is a vital, non-invasive diagnostic technique for assessing cardiac health. It captures the heart’s electrical activity and helps identify conditions such as arrhythmias or myocardial infarctions. However, with the proliferation of continuous monitoring through wearables, manual ECG analysis becomes laborious and prone to inconsistencies. To tackle this, deep learning methods—particularly LSTM-based autoencoders—offer an effective path to automate anomaly detection in ECG signals.</p>
 
-    <p>In this project, I explored an <strong>unsupervised deep learning</strong> technique to detect anomalies in ECG signals using a <strong>Long Short-Term Memory (LSTM) Autoencoder</strong>. The autoencoder model was trained exclusively on normal ECG data, meaning it learned to recognize the natural waveform patterns associated with healthy heart activity. It was not shown any abnormal signals during training. Once trained, the model attempted to reconstruct incoming ECG sequences. If the reconstruction was close to the original input, the signal was likely normal. Conversely, a poor reconstruction indicated that the signal diverged from what the model had learned, marking it as potentially abnormal.</p>
+    <p>This project explores an <strong>unsupervised LSTM Autoencoder</strong> trained solely on normal ECG signals. By learning the underlying patterns of healthy heart activity, the model becomes adept at reconstructing similar inputs. During testing, if an input deviates from the learned normal patterns—i.e., it's abnormal—the reconstruction error, measured by <strong>Mean Squared Error (MSE)</strong>, spikes. This serves as the signal for anomaly detection.</p>
 
-    <p>The core architecture involves an encoder-decoder setup. The <strong>encoder</strong> compresses the input ECG sequence into a lower-dimensional latent representation, capturing its temporal features. The <strong>decoder</strong> then attempts to reconstruct the original signal from this compressed form. Since the model was trained solely on clean data, it performs well when fed normal ECGs. However, when an unseen abnormal signal is introduced, the reconstruction deviates significantly, producing a higher <strong>reconstruction loss</strong>, which we measured using <strong>Mean Squared Error (MSE)</strong>. This loss becomes the central metric for anomaly detection.</p>
-
-    <p>To distinguish between normal and abnormal signals during inference, we needed to define a decision boundary. We analyzed the MSE distribution of reconstruction errors on normal validation data and set a threshold empirically. In this experiment, we selected <strong>0.007</strong> as the optimal threshold. Any input ECG sample that produced a reconstruction loss higher than this value was labeled as an anomaly.</p>
+    <p>The architecture includes an <strong>encoder</strong> that compresses the ECG sequence into a compact latent representation, and a <strong>decoder</strong> that reconstructs the original signal. If the reconstructed output closely resembles the input (i.e., low MSE), the sample is considered normal. Otherwise, it is flagged as an anomaly. A threshold of <strong>0.007</strong> on the MSE was selected based on validation performance, and any reconstruction loss exceeding this threshold was labeled abnormal.</p>
 
     <div class="image-row">
       <div class="image-box">
@@ -77,16 +75,16 @@
     </div>
 
     <h2>Performance Evaluation</h2>
-    <p>To evaluate our model’s effectiveness, we tested it with several unseen ECG signals labeled as abnormal and plotted the reconstructed waveforms alongside their loss values. In all three test cases, the model correctly detected the anomalies based on the reconstruction loss surpassing the 0.007 boundary.</p>
+    <p>The model was evaluated using unseen abnormal ECG signals. In all test cases, it successfully identified anomalies by comparing the MSE against the pre-defined threshold. The reconstruction plots clearly demonstrated how abnormal signals led to greater reconstruction errors, supporting the efficacy of the approach.</p>
 
     <h2>Why This Works</h2>
-    <p>This method is effective because the LSTM Autoencoder learns only the "normal" patterns of ECGs. When abnormal signals are passed through the model, it cannot accurately reconstruct the unfamiliar patterns, resulting in a noticeable spike in reconstruction error. This approach is particularly useful in real-world settings where labeled abnormal data is scarce or difficult to obtain.</p>
+    <p>The LSTM Autoencoder excels at learning and reconstructing sequential patterns. Trained only on normal ECGs, it cannot generalize to abnormal patterns, leading to high reconstruction loss when anomalies occur. This characteristic makes it an ideal candidate for scenarios where abnormal data is rare or unlabeled.</p>
 
     <h2>Limitations and Future Work</h2>
-    <p>While promising, this approach comes with limitations: it uses a single ECG lead; it performs binary classification without labeling the type of anomaly; and it uses a static threshold that could be made dynamic. Future work can include using multi-lead ECGs, adding attention mechanisms, and introducing explainability tools such as saliency maps.</p>
+    <p>Despite promising results, the approach has limitations: it uses only a single ECG lead, performs binary classification, and depends on a static threshold. Future work could address these by incorporating multi-lead ECGs, dynamic thresholding, attention mechanisms, and interpretability tools like saliency maps to explain the model's decisions.</p>
 
     <h2>Broader Impact</h2>
-    <p>This project is a foundational step toward real-time, intelligent health monitoring. By deploying this model on edge devices or integrating it into health wearables, we can continuously monitor patient ECGs and detect early signs of cardiac issues before clinical symptoms manifest. This not only enables preventative healthcare but also reduces the burden on hospitals and caregivers.</p>
+    <p>This model has potential applications in real-time, on-device cardiac monitoring via health wearables. Early anomaly detection could prompt timely medical intervention, reducing hospital admissions and improving patient outcomes. It represents a significant step toward scalable, AI-powered preventive healthcare.</p>
 
     <h3>Tools Used</h3>
     <ul>
