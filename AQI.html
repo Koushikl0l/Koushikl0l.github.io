@@ -102,8 +102,16 @@
     </div>
 
     <div class="keywords">
-      <strong>KEYWORDS</strong>: Multimodal learning, AQI regression, contrastive loss, robust fusion
-    </div>
+  <strong>KEYWORDS:</strong><br><br>
+  <em>Multimodal Learning</em> – Integrating heterogeneous data sources such as numerical sensor readings and image data for improved inference.<br>
+  <em>AQI Regression</em> – Predicting Air Quality Index (AQI) as a continuous variable using supervised machine learning methods.<br>
+  <em>Contrastive Learning</em> – A self-supervised method used here to align embeddings from different modalities by pulling positive pairs together and pushing negative ones apart.<br>
+  <em>Cross-Modal Attention</em> – Mechanism that allows one modality (e.g., sensor data) to attend to relevant features from another (e.g., images), enhancing contextual understanding.<br>
+  <em>Gated Fusion</em> – A selective integration strategy where each modality's contribution is weighted based on learned relevance scores.<br>
+  <em>EfficientNetB0</em> – A lightweight convolutional neural network used as the backbone for image feature extraction.<br>
+  <em>Environmental Monitoring</em> – A broader application area involving automated assessment of air quality and pollution trends in urban and rural settings.
+</div>
+
 
     <div class="columns">
       <div class="column">
@@ -130,25 +138,31 @@ with incomplete sensor coverage.
         </div>
 
         <div class="section dashed-box">
-          <h2>3 NUMERICAL EMBEDDING AND GATED FUSION</h2>
+    <h2>3 NUMERICAL EMBEDDING AND GATED FUSION</h2>
 <p>
-The numerical branch processes a 7-dimensional vector that includes environmental attributes like temperature, 
-humidity, and gas concentrations. This vector is passed through three fully connected layers with ReLU activations 
-and dropout regularization, allowing the model to extract a compact and noise-resistant embedding.
+The numerical branch is specifically designed to extract robust, high-level embeddings from structured environmental data. 
+The input vector contains features such as PM2.5, PM10, temperature, humidity, CO, SO<sub>2</sub>, and NO<sub>2</sub>. 
+These variables are passed through three dense layers with ReLU activation functions, along with dropout regularization to 
+prevent overfitting and enhance generalization.
+</p>
+<p>
+After numerical and visual features are aligned using attention, the representations are concatenated and passed through 
+a gated fusion module. The core of this module is a sigmoid-activated dense layer that learns a soft gate vector. This gate 
+controls how much each modality contributes to the final embedding. Mathematically, it implements:
+</p>
+<p style="text-align: center;">
+<code>FusedOutput = Gate * Attended + (1 - Gate) * Combined</code>
+</p>
+<p>
+This architecture ensures robustness in real-world conditions. For instance, if a sky image is taken in low light or 
+weather-obscured conditions, the gate learns to favor numerical data. Conversely, if certain sensors are noisy or malfunctioning, 
+image features are weighted more heavily.
+</p>
+<p>
+Empirical results from our experiments demonstrate that this adaptive gating significantly improves performance compared 
+to fixed fusion schemes. It also improves the model's resilience to modality dropout, a common issue in multimodal systems.
+</p>
 
-After alignment with the image embedding through attention, both are concatenated. To refine this fused representation, 
-we introduce a gated fusion unit. This unit dynamically weighs the contribution of each modality using a sigmoid-based 
-learned gating function. The formula is:
-</p>
-<p style="text-align:center;">
-<code>fused = gate * attention_output + (1 - gate) * raw_concat</code>
-</p>
-<p>
-This architecture allows the model to handle missing or noisy data more gracefully. For example, in the absence of 
-useful image cues (e.g., night-time shots or obstructed views), the gate learns to emphasize numerical inputs.
-Conversely, when sensor readings are inconsistent or corrupted, image features take priority. This adaptivity 
-significantly improves real-world robustness.
-</p>
 
         </div>
       </div>
@@ -171,6 +185,27 @@ Layer normalization and residual connections ensure training stability and conve
 </p>
 
         </div>
+      <div class="section">
+  <h2>5 CONCLUSION</h2>
+<p>
+We present a novel multimodal AQI prediction model that leverages contrastive learning, attention-based fusion, and a 
+gated decision mechanism to improve regression accuracy. By effectively integrating structured sensor data and unstructured 
+visual information, our model outperforms traditional baselines and offers a flexible, real-time solution for environmental 
+monitoring.
+</p>
+<p>
+This approach is especially beneficial in urban environments where data collection is sparse or heterogeneous. Our use of 
+cross-modal attention ensures context-sensitive fusion, while the contrastive objective aligns embeddings during training. 
+The gated fusion mechanism introduces dynamic adaptability based on data reliability.
+</p>
+<p>
+Future research will focus on enhancing interpretability, extending to multi-location AQI forecasting, and incorporating 
+temporal dynamics through recurrent or transformer-based extensions. Our framework can also be adapted to other 
+environmental monitoring tasks such as flood risk estimation or climate condition classification.
+</p>
+
+</div>
+
 
         <div class="figure">
           <strong>Figure 1: Cross-Modal AQI Regression Architecture</strong>
