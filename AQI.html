@@ -109,30 +109,67 @@
       <div class="column">
         <div class="section">
           <h2>1 INTRODUCTION</h2>
-          <p>
-            AQI prediction requires integrating heterogeneous data sources. Traditional unimodal models often
-            fail to generalize. Multimodal fusion leverages both numerical sensor data and visual cues from
-            images (e.g., sky color) to better estimate AQI. Our work utilizes cross-modal attention,
-            multi-head self-attention, gated fusion, and contrastive learning to create a unified prediction model.
-          </p>
+<p>
+Air pollution has become one of the most pressing environmental issues affecting public health globally. 
+Accurately estimating the Air Quality Index (AQI) is crucial for developing preventive health measures and 
+urban planning strategies. Traditional AQI prediction models rely solely on numerical sensor data, such as 
+PM2.5, PM10, NO<sub>2</sub>, SO<sub>2</sub>, and CO concentrations. However, these approaches struggle to 
+capture broader contextual cues like weather conditions and environmental visuals.
+
+Recent advancements in multimodal machine learning show promising potential in enhancing predictive accuracy 
+by integrating complementary information from multiple modalities. In our proposed system, we combine numerical 
+sensor data with visual data (sky images, urban visuals) using a deep neural model. This enables our model to 
+infer air quality patterns not only from raw sensor metrics but also from the atmospheric and spatial patterns 
+found in images.
+
+By incorporating contrastive learning, attention-based fusion, and deep visual encoders, our framework demonstrates 
+superior AQI prediction capabilities. The approach is especially beneficial for urban and semi-urban regions 
+with incomplete sensor coverage.
+</p>
+
         </div>
 
         <div class="section dashed-box">
-          <h2>3 NUMERICAL AND SELF-ATTENTION MECHANISMS</h2>
-          <p>
-            The numerical branch passes sensor data through dense layers. Self-attention learns internal dependencies.
-            Gated fusion combines features from modalities after alignment using cross-modal attention.
-          </p>
+          <h2>3 NUMERICAL EMBEDDING AND GATED FUSION</h2>
+<p>
+The numerical branch processes a 7-dimensional vector that includes environmental attributes like temperature, 
+humidity, and gas concentrations. This vector is passed through three fully connected layers with ReLU activations 
+and dropout regularization, allowing the model to extract a compact and noise-resistant embedding.
+
+After alignment with the image embedding through attention, both are concatenated. To refine this fused representation, 
+we introduce a gated fusion unit. This unit dynamically weighs the contribution of each modality using a sigmoid-based 
+learned gating function. The formula is:
+</p>
+<p style="text-align:center;">
+<code>fused = gate * attention_output + (1 - gate) * raw_concat</code>
+</p>
+<p>
+This architecture allows the model to handle missing or noisy data more gracefully. For example, in the absence of 
+useful image cues (e.g., night-time shots or obstructed views), the gate learns to emphasize numerical inputs.
+Conversely, when sensor readings are inconsistent or corrupted, image features take priority. This adaptivity 
+significantly improves real-world robustness.
+</p>
+
         </div>
       </div>
 
       <div class="column">
         <div class="section dashed-box">
           <h2>2 CROSS-MODAL AND SELF-ATTENTION MECHANISMS</h2>
-          <p>
-            Cross-modal attention aligns the embeddings from image and sensor data. It transforms the
-            query-key-value projections and feeds them into a self-attention block for joint feature refinement.
-          </p>
+<p>
+To effectively integrate heterogeneous features from numerical and visual inputs, our model employs a cross-modal 
+attention mechanism. The numerical representation acts as the query, while image embeddings serve as keys and values. 
+This allows the numerical features to attend to relevant visual semantics, such as haziness, cloud coverage, or sky tint.
+
+After this initial alignment, we pass the fused representation into a multi-head self-attention (MHSA) block. 
+This layer enables the model to model dependencies and interactions between different parts of the feature vector 
+across both modalities. Self-attention proves especially useful in capturing global context, such as how temperature 
+might interact with haze observed in the image.
+
+The design draws inspiration from the Transformer architecture, but is adapted for compact multimodal regression tasks. 
+Layer normalization and residual connections ensure training stability and convergence.
+</p>
+
         </div>
 
         <div class="figure">
