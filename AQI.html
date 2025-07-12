@@ -12,70 +12,110 @@
       background-color: #fff;
       color: #000;
     }
+
     .container {
       width: 90%;
       max-width: 1100px;
       margin: 40px auto;
+      border: 1.5px solid #ccc;
+      border-radius: 12px;
+      padding: 30px;
+      box-sizing: border-box;
     }
+
     .title {
       text-align: center;
       font-size: 22px;
       font-weight: bold;
     }
+
     .author {
       text-align: center;
       font-size: 14px;
       margin-bottom: 20px;
     }
-    .section {
-      margin-bottom: 30px;
-    }
+
     .abstract-box {
       border: 1px dashed #999;
       padding: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
-    .keywords {
-      margin-top: -10px;
-      margin-bottom: 30px;
-    }
+
     .columns {
       display: flex;
       gap: 20px;
+      align-items: flex-start;
     }
+
     .column {
       flex: 1;
     }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .dashed-box {
+      border: 1.5px dashed #666;
+      padding: 10px;
+      margin-bottom: 20px;
+      background-color: #fcfcfc;
+    }
+
+    .keyword-section {
+      width: 93%;
+      padding: 10px 15px;
+      font-size: 13.5px;
+      margin-bottom: 20px;
+      background-color: #fdfdfd;
+    }
+
+    .keyword-section h2 {
+      margin-top: 0;
+      font-size: 15px;
+      text-align: left;
+    }
+
+    .keyword-section ul {
+      list-style-type: none;
+      padding-left: 0;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .keyword-section li {
+      margin-bottom: 6px;
+    }
+
     .figure {
       text-align: center;
       font-size: 12px;
       margin-top: 10px;
       margin-bottom: 20px;
     }
+
     .image-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
       margin: 20px 0;
     }
+
     .image-grid img {
       width: 100%;
       border: 1px solid #999;
       border-radius: 4px;
     }
+
     .caption {
       text-align: center;
       font-size: 11px;
       color: #444;
     }
+
     h2 {
       font-size: 16px;
       margin: 15px 0 5px;
-    }
-    .dashed-box {
-      border: 1.5px dashed #666;
-      padding: 10px;
-      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -85,9 +125,9 @@
       Robust Fusion and Contrastive Learning for Multimodal AQI Regression
     </div>
     <div class="author">
-      FirstName LastName <br>
-      Department of Computer Science, University Name <br>
-      email@example.com
+      Koushik Ahmed Kushal <br>
+      Department of Computer Science, American International University-Bangladesh <br>
+      koushikahmedkushal@gmail.com
     </div>
 
     <div class="abstract-box">
@@ -100,96 +140,98 @@
         to align numerical and image embeddings, leading to state-of-the-art performance in AQI regression from multiple data sources.
       </p>
     </div>
-<div class="section dashed-box">
-    <div class="keywords">
-  <strong>KEYWORDS:</strong><br><br>
-  <em>Multimodal Learning</em> – Integrating heterogeneous data sources such as numerical sensor readings and image data for improved inference.<br>
-  <em>AQI Regression</em> – Predicting Air Quality Index (AQI) as a continuous variable using supervised machine learning methods.<br>
-  <em>Contrastive Learning</em> – A self-supervised method used here to align embeddings from different modalities by pulling positive pairs together and pushing negative ones apart.<br>
-  <em>Cross-Modal Attention</em> – Mechanism that allows one modality (e.g., sensor data) to attend to relevant features from another (e.g., images), enhancing contextual understanding.<br>
-  <em>Gated Fusion</em> – A selective integration strategy where each modality's contribution is weighted based on learned relevance scores.<br>
-  <em>EfficientNetB0</em> – A lightweight convolutional neural network used as the backbone for image feature extraction.<br>
-  <em>Environmental Monitoring</em> – A broader application area involving automated assessment of air quality and pollution trends in urban and rural settings.
-</div>
-
 
     <div class="columns">
+      <!-- Left Column -->
       <div class="column">
-        <div class="section">
-          <h2>1 INTRODUCTION</h2>
-<p>
-Air pollution has become one of the most pressing environmental issues affecting public health globally. 
-Accurately estimating the Air Quality Index (AQI) is crucial for developing preventive health measures and 
-urban planning strategies. Traditional AQI prediction models rely solely on numerical sensor data, such as 
-PM2.5, PM10, NO<sub>2</sub>, SO<sub>2</sub>, and CO concentrations. However, these approaches struggle to 
-capture broader contextual cues like weather conditions and environmental visuals.
-
-Recent advancements in multimodal machine learning show promising potential in enhancing predictive accuracy 
-by integrating complementary information from multiple modalities. In our proposed system, we combine numerical 
-sensor data with visual data (sky images, urban visuals) using a deep neural model. This enables our model to 
-infer air quality patterns not only from raw sensor metrics but also from the atmospheric and spatial patterns 
-found in images.
-
-By incorporating contrastive learning, attention-based fusion, and deep visual encoders, our framework demonstrates 
-superior AQI prediction capabilities. The approach is especially beneficial for urban and semi-urban regions 
-with incomplete sensor coverage.
-</p>
-
+        <!-- Keywords box -->
+        <div class="section dashed-box keyword-section" >
+          <h2>KEYWORDS</h2>
+          <ul>
+            <li><strong>Multimodal Learning</strong> – Integration of image and sensor data.</li>
+            <li><strong>AQI Regression</strong> – Predicting AQI as a continuous variable.</li>
+            <li><strong>Contrastive Learning</strong> – Aligning multi-modal embeddings.</li>
+            <li><strong>Cross-Modal Attention</strong> – Sensor-data attending to image features.</li>
+            <li><strong>Gated Fusion</strong> – Dynamic modality balancing.</li>
+            <li><strong>EfficientNetB0</strong> – Lightweight CNN for feature extraction.</li>
+            <li><strong>Environmental Monitoring</strong> – Urban air quality analysis.</li>
+          </ul>
         </div>
 
+        <!-- Introduction -->
         <div class="section dashed-box">
-    <h2>3 NUMERICAL EMBEDDING AND GATED FUSION</h2>
-<p>
-The numerical branch is specifically designed to extract robust, high-level embeddings from structured environmental data. 
-The input vector contains features such as PM2.5, PM10, temperature, humidity, CO, SO<sub>2</sub>, and NO<sub>2</sub>. 
-These variables are passed through three dense layers with ReLU activation functions, along with dropout regularization to 
-prevent overfitting and enhance generalization.
-</p>
-<p>
-After numerical and visual features are aligned using attention, the representations are concatenated and passed through 
-a gated fusion module. The core of this module is a sigmoid-activated dense layer that learns a soft gate vector. This gate 
-controls how much each modality contributes to the final embedding. Mathematically, it implements:
-</p>
-<p style="text-align: center;">
-<code>FusedOutput = Gate * Attended + (1 - Gate) * Combined</code>
-</p>
-<p>
-This architecture ensures robustness in real-world conditions. For instance, if a sky image is taken in low light or 
-weather-obscured conditions, the gate learns to favor numerical data. Conversely, if certain sensors are noisy or malfunctioning, 
-image features are weighted more heavily.
-</p>
-<p>
-Empirical results from our experiments demonstrate that this adaptive gating significantly improves performance compared 
-to fixed fusion schemes. It also improves the model's resilience to modality dropout, a common issue in multimodal systems.
-</p>
+          <h2>1 INTRODUCTION</h2>
+          <p>
+            Air pollution has become one of the most pressing environmental issues affecting public health globally.
+            Accurately estimating the Air Quality Index (AQI) is crucial for developing preventive health measures and
+            urban planning strategies. Traditional AQI prediction models rely solely on numerical sensor data, such as
+            PM2.5, PM10, NO<sub>2</sub>, SO<sub>2</sub>, and CO concentrations. However, these approaches struggle to
+            capture broader contextual cues like weather conditions and environmental visuals.
+          </p>
+          <p>
+            Recent advancements in multimodal machine learning show promising potential in enhancing predictive accuracy
+            by integrating complementary information from multiple modalities. In our proposed system, we combine numerical
+            sensor data with visual data (sky images, urban visuals) using a deep neural model. This enables our model to
+            infer air quality patterns not only from raw sensor metrics but also from the atmospheric and spatial patterns
+            found in images.
+          </p>
+          <p>
+            By incorporating contrastive learning, attention-based fusion, and deep visual encoders, our framework demonstrates
+            superior AQI prediction capabilities. The approach is especially beneficial for urban and semi-urban regions
+            with incomplete sensor coverage.
+          </p>
+        </div>
 
-
+        <!-- Numerical Embedding -->
+        <div class="section dashed-box">
+          <h2>3 NUMERICAL EMBEDDING AND GATED FUSION</h2>
+          <p>
+            The numerical branch is specifically designed to extract robust, high-level embeddings from structured environmental data.
+            The input vector contains features such as PM2.5, PM10, temperature, humidity, CO, SO<sub>2</sub>, and NO<sub>2</sub>.
+            These variables are passed through three dense layers with ReLU activation functions, along with dropout regularization to
+            prevent overfitting and enhance generalization.
+          </p>
+          <p>
+            After numerical and visual features are aligned using attention, the representations are concatenated and passed through
+            a gated fusion module. The core of this module is a sigmoid-activated dense layer that learns a soft gate vector. This gate
+            controls how much each modality contributes to the final embedding.
+          </p>
+          <p style="text-align: center;"><code>FusedOutput = Gate * Attended + (1 - Gate) * Combined</code></p>
+          <p>
+            This architecture ensures robustness in real-world conditions. For instance, if a sky image is taken in low light or
+            weather-obscured conditions, the gate learns to favor numerical data. Conversely, if certain sensors are noisy or malfunctioning,
+            image features are weighted more heavily.
+          </p>
+          <p>
+            Empirical results from our experiments demonstrate that this adaptive gating significantly improves performance compared
+            to fixed fusion schemes. It also improves the model's resilience to modality dropout, a common issue in multimodal systems.
+          </p>
         </div>
       </div>
 
+      <!-- Right Column -->
       <div class="column">
-        <div class="section dashed-box">
+        <!-- Attention Box -->
+        <div class="section dashed-box" style="margin-top: 0px;">
           <h2>2 CROSS-MODAL AND SELF-ATTENTION MECHANISMS</h2>
-<p>
-To effectively integrate heterogeneous features from numerical and visual inputs, our model employs a cross-modal 
-attention mechanism. The numerical representation acts as the query, while image embeddings serve as keys and values. 
-This allows the numerical features to attend to relevant visual semantics, such as haziness, cloud coverage, or sky tint.
-
-After this initial alignment, we pass the fused representation into a multi-head self-attention (MHSA) block. 
-This layer enables the model to model dependencies and interactions between different parts of the feature vector 
-across both modalities. Self-attention proves especially useful in capturing global context, such as how temperature 
-might interact with haze observed in the image.
-
-The design draws inspiration from the Transformer architecture, but is adapted for compact multimodal regression tasks. 
-Layer normalization and residual connections ensure training stability and convergence.
-</p>
-
+          <p>
+            To effectively integrate heterogeneous features from numerical and visual inputs, our model employs a cross-modal
+            attention mechanism. The numerical representation acts as the query, while image embeddings serve as keys and values.
+            This allows the numerical features to attend to relevant visual semantics, such as haziness, cloud coverage, or sky tint.
+          </p>
+          <p>
+            After this initial alignment, we pass the fused representation into a multi-head self-attention (MHSA) block.
+            This layer enables the model to model dependencies and interactions between different parts of the feature vector
+            across both modalities. Self-attention proves especially useful in capturing global context, such as how temperature
+            might interact with haze observed in the image.
+          </p>
+          <p>
+            The design draws inspiration from the Transformer architecture, but is adapted for compact multimodal regression tasks.
+            Layer normalization and residual connections ensure training stability and convergence.
+          </p>
         </div>
-      <div class="section">
 
-</div>
-
-
+        <!-- Image Grid -->
         <div class="figure">
           <strong>Figure 1: Cross-Modal AQI Regression Architecture</strong>
           <div class="image-grid">
@@ -221,23 +263,27 @@ Layer normalization and residual connections ensure training stability and conve
         </div>
       </div>
     </div>
-<h2>5 CONCLUSION</h2>
-<p>
-We present a novel multimodal AQI prediction model that leverages contrastive learning, attention-based fusion, and a 
-gated decision mechanism to improve regression accuracy. By effectively integrating structured sensor data and unstructured 
-visual information, our model outperforms traditional baselines and offers a flexible, real-time solution for environmental 
-monitoring.
-</p>
-<p>
-This approach is especially beneficial in urban environments where data collection is sparse or heterogeneous. Our use of 
-cross-modal attention ensures context-sensitive fusion, while the contrastive objective aligns embeddings during training. 
-The gated fusion mechanism introduces dynamic adaptability based on data reliability.
-</p>
-<p>
-Future research will focus on enhancing interpretability, extending to multi-location AQI forecasting, and incorporating 
-temporal dynamics through recurrent or transformer-based extensions. Our framework can also be adapted to other 
-environmental monitoring tasks such as flood risk estimation or climate condition classification.
-</p>
+
+    <!-- Conclusion -->
+    <div class="section dashed-box">
+      <h2>5 CONCLUSION</h2>
+      <p>
+        We present a novel multimodal AQI prediction model that leverages contrastive learning, attention-based fusion, and a
+        gated decision mechanism to improve regression accuracy. By effectively integrating structured sensor data and unstructured
+        visual information, our model outperforms traditional baselines and offers a flexible, real-time solution for environmental
+        monitoring.
+      </p>
+      <p>
+        This approach is especially beneficial in urban environments where data collection is sparse or heterogeneous. Our use of
+        cross-modal attention ensures context-sensitive fusion, while the contrastive objective aligns embeddings during training.
+        The gated fusion mechanism introduces dynamic adaptability based on data reliability.
+      </p>
+      <p>
+        Future research will focus on enhancing interpretability, extending to multi-location AQI forecasting, and incorporating
+        temporal dynamics through recurrent or transformer-based extensions. Our framework can also be adapted to other
+        environmental monitoring tasks such as flood risk estimation or climate condition classification.
+      </p>
+    </div>
   </div>
 </body>
 </html>
