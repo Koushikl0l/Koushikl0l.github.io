@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimodal AQI Prediction Paper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border: 1px dashed #ccc; /* Dashed outline as per diagram */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .section h2 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+        .box {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #0056b3;
+        }
+        .box-1 { border-color: #ff6b6b; }
+        .box-2 { border-color: #4ecdc4; }
+        .box-3 { border-color: #45b7d1; }
+        .box-4 { border-color: #96ceb4; }
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Multimodal AQI Prediction Paper</h1>
+
+        <div class="section">
+            <h2>Introduction</h2>
+            <p>This paper explores a multimodal approach to predict the Air Quality Index (AQI) using numerical data and sky/air images, enabling image-only inference for mobile applications.</p>
+        </div>
+
+        <div class="section">
+            <h2>AQI Estimation on Image</h2>
+            <div class="box box-1">
+                <h3>Box 1: Data Collection and Preprocessing</h3>
+                <p>Numerical data is normalized, and images are resized to 224x224 pixels with augmentations for robustness.</p>
+            </div>
+            <div class="box box-2">
+                <h3>Box 2: Model Architecture</h3>
+                <p>Features a numerical branch, image branch (EfficientNetB0), and a robust fusion layer with attention and contrastive learning.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Writing Board</h2>
+            <div class="box box-3">
+                <h3>Box 3: Training and Evaluation</h3>
+                <p>Trained with PyTorch using AdamW, validated with RMSE and MAE, showing improved accuracy in diverse conditions.</p>
+            </div>
+            <div class="box box-4">
+                <h3>Box 4: Deployment and Future Work</h3>
+                <p>Deployable via TorchScript; future work includes temporal modeling and vision transformers.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Conclusion</h2>
+            <p>The model effectively predicts AQI with a robust fusion mechanism, contributing to environmental monitoring.</p>
+        </div>
+
+        <div class="section">
+            <h2>References</h2>
+            <ul>
+                <li><a href="#">Smith, J. (2023). Multimodal Learning for Environmental Monitoring.</a></li>
+                <li><a href="#">Jones, A. (2024). Image-Based Air Quality Prediction.</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
