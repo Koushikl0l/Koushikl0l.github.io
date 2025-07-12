@@ -18,13 +18,6 @@
       max-width: 1100px;
       margin: 40px auto;
     }
-    .dashed-box {
-      border: 1.5px dashed #666;
-      padding: 20px;
-      margin-bottom: 30px;
-      border-radius: 6px;
-      background-color: #fcfcfc;
-    }
     .title {
       text-align: center;
       font-size: 24px;
@@ -33,6 +26,7 @@
     .author {
       text-align: center;
       font-size: 14px;
+      margin-bottom: 30px;
     }
     h2 {
       font-size: 18px;
@@ -42,14 +36,29 @@
       text-align: justify;
       margin-bottom: 12px;
     }
+    .dashed-box {
+      border: 1.5px dashed #666;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 6px;
+      background-color: #fcfcfc;
+    }
+    .abstract-box {
+      border: 1.5px dashed #999;
+      padding: 20px;
+      margin-bottom: 30px;
+      background-color: #fefefe;
+    }
     .keywords {
       font-size: 16px;
       line-height: 1.6;
       font-weight: 500;
       background-color: #f9f9f9;
+      border: 1.5px dashed #999;
       padding: 15px;
       border-radius: 6px;
       text-align: justify;
+      margin-bottom: 30px;
     }
     .columns {
       display: flex;
@@ -79,26 +88,23 @@
     .figure {
       text-align: center;
       font-size: 12px;
+      margin-top: 10px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-
-    <!-- Title & Author -->
-    <div class="dashed-box">
-      <div class="title">
-        Robust Fusion and Contrastive Learning for Multimodal AQI Regression
-      </div>
-      <div class="author">
-        FirstName LastName <br>
-        Department of Computer Science, University Name <br>
-        email@example.com
-      </div>
+    <div class="title">
+      Robust Fusion and Contrastive Learning for Multimodal AQI Regression
+    </div>
+    <div class="author">
+      FirstName LastName <br>
+      Department of Computer Science, University Name <br>
+      email@example.com
     </div>
 
-    <!-- Abstract -->
-    <div class="dashed-box">
+    <div class="abstract-box">
       <strong>ABSTRACT</strong>
       <p>
         A multimodal approach for predicting Air Quality Index (AQI) by integrating numerical and image data.
@@ -109,8 +115,7 @@
       </p>
     </div>
 
-    <!-- Keywords -->
-    <div class="dashed-box keywords">
+    <div class="keywords dashed-box">
       <strong>KEYWORDS:</strong><br><br>
       <em>Multimodal Learning</em> – Integrating heterogeneous data sources such as numerical sensor readings and image data for improved inference.<br>
       <em>AQI Regression</em> – Predicting Air Quality Index (AQI) as a continuous variable using supervised machine learning methods.<br>
@@ -121,7 +126,6 @@
       <em>Environmental Monitoring</em> – A broader application area involving automated assessment of air quality and pollution trends in urban and rural settings.
     </div>
 
-    <!-- Introduction -->
     <div class="dashed-box">
       <h2>1 INTRODUCTION</h2>
       <p>
@@ -145,55 +149,58 @@
       </p>
     </div>
 
-    <!-- Section 2 -->
-    <div class="dashed-box">
-      <h2>2 CROSS-MODAL AND SELF-ATTENTION MECHANISMS</h2>
-      <p>
-        To effectively integrate heterogeneous features from numerical and visual inputs, our model employs a cross-modal 
-        attention mechanism. The numerical representation acts as the query, while image embeddings serve as keys and values. 
-        This allows the numerical features to attend to relevant visual semantics, such as haziness, cloud coverage, or sky tint.
-      </p>
-      <p>
-        After this initial alignment, we pass the fused representation into a multi-head self-attention (MHSA) block. 
-        This layer enables the model to model dependencies and interactions between different parts of the feature vector 
-        across both modalities. Self-attention proves especially useful in capturing global context, such as how temperature 
-        might interact with haze observed in the image.
-      </p>
-      <p>
-        The design draws inspiration from the Transformer architecture, but is adapted for compact multimodal regression tasks. 
-        Layer normalization and residual connections ensure training stability and convergence.
-      </p>
+    <div class="columns">
+      <div class="column">
+        <div class="dashed-box">
+          <h2>2 CROSS-MODAL AND SELF-ATTENTION MECHANISMS</h2>
+          <p>
+            To effectively integrate heterogeneous features from numerical and visual inputs, our model employs a cross-modal 
+            attention mechanism. The numerical representation acts as the query, while image embeddings serve as keys and values. 
+            This allows the numerical features to attend to relevant visual semantics, such as haziness, cloud coverage, or sky tint.
+          </p>
+          <p>
+            After this initial alignment, we pass the fused representation into a multi-head self-attention (MHSA) block. 
+            This layer enables the model to model dependencies and interactions between different parts of the feature vector 
+            across both modalities. Self-attention proves especially useful in capturing global context, such as how temperature 
+            might interact with haze observed in the image.
+          </p>
+          <p>
+            The design draws inspiration from the Transformer architecture, but is adapted for compact multimodal regression tasks. 
+            Layer normalization and residual connections ensure training stability and convergence.
+          </p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="dashed-box">
+          <h2>3 NUMERICAL EMBEDDING AND GATED FUSION</h2>
+          <p>
+            The numerical branch is specifically designed to extract robust, high-level embeddings from structured environmental data. 
+            The input vector contains features such as PM2.5, PM10, temperature, humidity, CO, SO<sub>2</sub>, and NO<sub>2</sub>. 
+            These variables are passed through three dense layers with ReLU activation functions, along with dropout regularization to 
+            prevent overfitting and enhance generalization.
+          </p>
+          <p>
+            After numerical and visual features are aligned using attention, the representations are concatenated and passed through 
+            a gated fusion module. The core of this module is a sigmoid-activated dense layer that learns a soft gate vector. This gate 
+            controls how much each modality contributes to the final embedding. Mathematically, it implements:
+          </p>
+          <p style="text-align: center;">
+            <code>FusedOutput = Gate * Attended + (1 - Gate) * Combined</code>
+          </p>
+          <p>
+            This architecture ensures robustness in real-world conditions. For instance, if a sky image is taken in low light or 
+            weather-obscured conditions, the gate learns to favor numerical data. Conversely, if certain sensors are noisy or malfunctioning, 
+            image features are weighted more heavily.
+          </p>
+          <p>
+            Empirical results from our experiments demonstrate that this adaptive gating significantly improves performance compared 
+            to fixed fusion schemes. It also improves the model's resilience to modality dropout, a common issue in multimodal systems.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <!-- Section 3 -->
-    <div class="dashed-box">
-      <h2>3 NUMERICAL EMBEDDING AND GATED FUSION</h2>
-      <p>
-        The numerical branch is specifically designed to extract robust, high-level embeddings from structured environmental data. 
-        The input vector contains features such as PM2.5, PM10, temperature, humidity, CO, SO<sub>2</sub>, and NO<sub>2</sub>. 
-        These variables are passed through three dense layers with ReLU activation functions, along with dropout regularization to 
-        prevent overfitting and enhance generalization.
-      </p>
-      <p>
-        After numerical and visual features are aligned using attention, the representations are concatenated and passed through 
-        a gated fusion module. The core of this module is a sigmoid-activated dense layer that learns a soft gate vector. This gate 
-        controls how much each modality contributes to the final embedding. Mathematically, it implements:
-      </p>
-      <p style="text-align: center;">
-        <code>FusedOutput = Gate * Attended + (1 - Gate) * Combined</code>
-      </p>
-      <p>
-        This architecture ensures robustness in real-world conditions. For instance, if a sky image is taken in low light or 
-        weather-obscured conditions, the gate learns to favor numerical data. Conversely, if certain sensors are noisy or malfunctioning, 
-        image features are weighted more heavily.
-      </p>
-      <p>
-        Empirical results from our experiments demonstrate that this adaptive gating significantly improves performance compared 
-        to fixed fusion schemes. It also improves the model's resilience to modality dropout, a common issue in multimodal systems.
-      </p>
-    </div>
-
-    <!-- Figure Section -->
     <div class="dashed-box">
       <div class="figure">
         <strong>Figure 1: Cross-Modal AQI Regression Architecture</strong>
@@ -226,7 +233,6 @@
       </div>
     </div>
 
-    <!-- Conclusion -->
     <div class="dashed-box">
       <h2>4 CONCLUSION</h2>
       <p>
