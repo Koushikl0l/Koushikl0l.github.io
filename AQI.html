@@ -78,7 +78,7 @@
         .content-section {
             background: white;
             margin: 0;
-            padding: 50px 40px;
+            padding: 30px 40px;
         }
 
         .content-section:nth-child(even) {
@@ -88,7 +88,7 @@
         .two-column {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 40px;
             align-items: center;
             min-height: 500px;
         }
@@ -97,16 +97,16 @@
             font-size: 30px;
             font-weight: 300;
             color: #333;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             line-height: 1.3;
             text-align: left;
         }
 
         .section-text {
-            font-size: 19px;
+            font-size: 18px;
             line-height: 1.6;
             color: #262424;
-            margin-bottom: 18px;
+            margin-bottom: 15px;
             text-align: justify;
             text-align-last: left;
             font-weight: 350;
@@ -154,8 +154,9 @@
             display: block;
             object-fit: cover;
         }
-        /* Cross-modal analysis image */
-        .cross-modal-image {
+
+        /* ROC/Results image */
+        .results-image {
             width: 100%;
             max-width: 500px;
             height: 500px;
@@ -164,8 +165,8 @@
             object-fit: contain;
         }
 
-        /* ROC/Results image */
-        .results-image {
+        /* Cross-modal analysis image */
+        .cross-modal-image {
             width: 100%;
             max-width: 500px;
             height: 500px;
@@ -609,6 +610,7 @@
         <!-- Validation Section -->
         <section class="content-section">
             <div class="two-column">
+                <img class="results-image" src="AQI_image/r.png" alt="AQFusionNet performance results and ROC analysis">
                 <div>
                     <h2 class="section-title">We compared AQFusionNet's performance on different baseline with test set.</h2>
                     <p class="section-text">
@@ -621,7 +623,6 @@
                         Overall, AQFusionNet delivers lower errors, tighter confidence intervals, and stronger classification performance than other backbone variants and baselines, establishing it as a reliable solution for multimodal AQI prediction.
                     </p>
                 </div>
-                <img class="results-image" src="AQI_image/r.png" alt="AQFusionNet performance results and ROC analysis">
             </div>
         </section>
 
@@ -630,17 +631,17 @@
         <!-- Partnership Section -->
         <section class="content-section partnership-section">
             <div class="partnership-content">
-                <div class="partnership-images">
-                    <div class="phone-demo">
-                        <img src="AQI_image/check.png" alt="AQFusionNet validation results">
-                    </div>
-                </div>
                 <div>
                     <h2 class="section-title">We are currently looking for research partnerships with environmental and public health agencies that are interested in working with us to validate this technology.</h2>
                     <p class="section-text">
                         We hope that this system may have the potential to improve air quality monitoring and increase access to reliable pollution insights globally.Towards this goal, the future of this research will depend on obtaining access to more diverse datasets for training and improving the model, as well as testing it across new geographic regions and environmental conditions. This additional data will help improve the accuracy and robustness of the model, making it more safe and effective.
                     </p>
                     <a href="https://github.com/Koushikl0l/Koushikl0l.github.io/blob/main/Multimodal_Deep_Learning_for_Air_Quality_Index_Prediction_Using_Atmospheric_Images_and_Sensor_Data_IEEE-5.pdf" class="partner-btn">Read AQFusionNet paper</a>
+                </div>
+                <div class="partnership-images">
+                    <div class="phone-demo">
+                        <img src="AQI_image/check.png" alt="AQFusionNet validation results">
+                    </div>
                 </div>
             </div>
         </section>
