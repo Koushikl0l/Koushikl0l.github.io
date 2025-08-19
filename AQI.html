@@ -1,307 +1,632 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Robust Fusion and Contrastive Learning for Multimodal AQI Regression</title>
-  <style>
-    body {
-      font-family: "Times New Roman", Times, serif;
-      font-size: 14px;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      color: #000;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheXNeXt: Deep learning for chest radiograph diagnosis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: 40px auto;
-      border: 1.5px solid #ccc;
-      border-radius: 12px;
-      padding: 30px;
-      box-sizing: border-box;
-    }
+        body {
+            font-family: 'Product Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: white;
+        }
 
-    .title {
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
-    }
+        /* Header with geometric pattern */
+        .header {
+            background: #a41d13f8;
+            background-image: 
+                linear-gradient(30deg, transparent 40%, rgba(255, 255, 255, 0.1) 40%, rgba(107, 23, 23, 0.1) 60%, transparent 60%),
+                linear-gradient(150deg, transparent 40%, rgba(255,255,255,0.05) 40%, rgba(204, 36, 36, 0.05) 60%, transparent 60%);
+            background-size: 60px 60px, 80px 80px;
+            color: white;
+            padding: 25px 20px;
+            text-align: left;
+            position: relative;
+        }
 
-    .author {
-      text-align: center;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .abstract-box {
-      border: 1px dashed #999;
-      padding: 15px;
-      margin-bottom: 25px;
-    }
+        .stanford-label {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
 
-    .columns {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-    }
+        .main-title {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
 
-    .column {
-      flex: 1;
-    }
+        .main-title strong {
+            font-weight: 600;
+        }
 
-    .section {
-      margin-bottom: 20px;
-    }
+        .authors {
+            font-size: 16px;
+            line-height: 1.5;
+            opacity: 0.95;
+            max-width: 900px;
+        }
 
-    .dashed-box {
-      border: 1.5px dashed #666;
-      padding: 10px;
-      margin-bottom: 20px;
-      background-color: #fcfcfc;
-    }
+        .authors sup {
+            font-size: 12px;
+        }
 
-    .keyword-section {
-      width: 93%;
-      padding: 10px 15px;
-      font-size: 13.5px;
-      margin-bottom: 20px;
-      background-color: #fdfdfd;
-    }
+        /* Main content */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .keyword-section h2 {
-      margin-top: 0;
-      font-size: 15px;
-      text-align: left;
-    }
+        .content-section {
+            background: white;
+            margin: 0;
+            padding: 50px 40px;
+        }
 
-    .keyword-section ul {
-      list-style-type: none;
-      padding-left: 0;
-      line-height: 1.5;
-      margin: 0;
-    }
+        .content-section:nth-child(even) {
+            background: #fafafa;
+        }
 
-    .keyword-section li {
-      margin-bottom: 6px;
-    }
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            min-height: 500px;
+        }
 
-    .figure {
-      text-align: center;
-      font-size: 12px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-    }
+        .section-title {
+            font-size: 30px;
+            font-weight: 300;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            text-align: left;
+        }
 
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin: 20px 0;
-    }
+        .section-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: justify;
+            text-align-last: left;
+        }
 
-    .image-grid img {
-      width: 100%;
-      border: 1px solid #999;
-      border-radius: 4px;
-    }
+        /* Video embed styling */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+        }
 
-    .caption {
-      text-align: center;
-      font-size: 11px;
-      color: #444;
-    }
+        .video-embed {
+            width: 100%;
+            height: 280px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+            position: relative;
+        }
 
-    h2 {
-      font-size: 16px;
-      margin: 15px 0 5px;
-    }
-  </style>
+        .video-embed img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Intro image (replaces video container) */
+        .intro-image {
+            width: 100%;
+            max-width: 500px;
+            height: 500px;
+            border-radius: 8px;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Training section image */
+        .training-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* ROC/Results image */
+        .results-image {
+            width: 100%;
+            max-width: 500px;
+            height: 500px;
+            border-radius: 8px;
+            display: block;
+            object-fit: contain;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* X-ray images grid */
+        .xray-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .xray-pair {
+            display: flex;
+            gap: 15px;
+        }
+
+        .xray-image {
+            width: 100%;
+            height: 200px;
+            background: #e9ecef;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .xray-original {
+            background: linear-gradient(45deg, #f8f9fa 25%, #e9ecef 25%, #e9ecef 50%, #f8f9fa 50%, #f8f9fa 75%, #e9ecef 75%);
+            background-size: 20px 20px;
+        }
+
+        .xray-heatmap {
+            background: radial-gradient(circle at 60% 40%, rgba(255, 100, 150, 0.8) 0%, rgba(150, 50, 200, 0.6) 40%, rgba(50, 50, 150, 0.4) 70%, transparent 100%),
+                        radial-gradient(circle at 40% 70%, rgba(255, 150, 50, 0.7) 0%, rgba(200, 100, 100, 0.5) 40%, transparent 70%),
+                        linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+        }
+
+        /* ROC curves grid */
+        .roc-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .roc-chart {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .roc-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .roc-plot {
+            width: 100%;
+            height: 120px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Simulated ROC curve */
+        .roc-plot::before {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            top: 10px;
+            border-left: 2px solid #ccc;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .roc-plot::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: calc(100% - 20px);
+            height: 3px;
+            background: linear-gradient(45deg, #28a745 0%, #17a2b8 50%, #6f42c1 100%);
+            border-radius: 2px;
+            clip-path: polygon(0% 100%, 20% 80%, 40% 60%, 60% 40%, 80% 20%, 100% 0%);
+        }
+
+        /* Performance metrics */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .metric-chart {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .metric-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .metric-plots {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+        }
+
+        .metric-plot {
+            text-align: center;
+        }
+
+        .metric-plot-title {
+            font-size: 12px;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .plot-area {
+            width: 100%;
+            height: 80px;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Simulated scatter plots */
+        .plot-area::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            background: #28a745;
+            border-radius: 50%;
+            box-shadow: 
+                -10px 5px 0 #17a2b8,
+                5px -8px 0 #dc3545,
+                -15px 15px 0 #ffc107,
+                10px 10px 0 #6f42c1,
+                -5px -5px 0 #28a745,
+                15px -15px 0 #fd7e14;
+        }
+
+        /* Partnership section */
+        .partnership-section {
+            background: transparent;
+            text-align: center;
+        }
+
+        .partnership-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .partnership-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .phone-demo {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            background: white;
+            border-radius: 5px;
+            position: relative;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .phone-demo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            padding: 20px;
+        }
+
+        .partner-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: #8C1515;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            border: 2px solid #8C1515;
+            box-shadow: 0 2px 4px rgba(140, 21, 21, 0.2);
+        }
+
+        .partner-btn::before {
+            content: "📄";
+            font-size: 16px;
+        }
+
+        .partner-btn:hover {
+            background: #B1040E;
+            border-color: #B1040E;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(140, 21, 21, 0.3);
+        }
+
+        .partner-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(140, 21, 21, 0.2);
+        }
+
+        /* Copyright section */
+        .copyright-section {
+            background: #f8f9fa;
+            padding: 25px 0;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .copyright-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .copyright-text {
+            color: #6c757d;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 95%;
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 968px) {
+            .two-column,
+            .partnership-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .main-title {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .intro-image,
+            .training-image,
+            .results-image {
+                max-width: 100%;
+                height: auto;
+                margin: 0 auto;
+            }
+
+            .phone-demo {
+                max-width: 100%;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 15px;
+            }
+            
+            .main-title {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .section-text {
+                font-size: 15px;
+                line-height: 1.5;
+            }
+            
+            .content-section {
+                padding: 40px 20px;
+            }
+
+            .two-column {
+                gap: 30px;
+            }
+
+            .partner-btn {
+                padding: 12px 24px;
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 25px 10px;
+            }
+
+            .main-title {
+                font-size: 24px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .section-text {
+                font-size: 14px;
+            }
+
+            .content-section {
+                padding: 30px 15px;
+            }
+
+            .container {
+                padding: 0 10px;
+            }
+
+            .partner-btn {
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+
+            .phone-demo {
+                height: 250px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="title">
-      Robust Fusion and Contrastive Learning for Multimodal AQI Regression
-    </div>
-    <div class="author">
-      Koushik Ahmed Kushal <br>
-      Department of Computer Science, American International University-Bangladesh <br>
-      koushikahmedkushal@gmail.com
-    </div>
-
-    <div class="abstract-box">
-      <strong>ABSTRACT</strong>
-      <!--
-      <p>
-        A multimodal approach for predicting Air Quality Index (AQI) by integrating numerical and image data.
-        A precision-integrated numerical branch and an image encoder using EfficientNetB0 extract features.
-        Cross-modal attention is utilized to enhance interaction between modalities, followed by multi-head self-attention
-        and a gated fusion mechanism for robust integration. A contrastive loss function is incorporated during training
-        to align numerical and image embeddings, leading to state-of-the-art performance in AQI regression from multiple data sources.
-      </p>
-      -->
-      <p>
-        A multimodal approach for predicting Air Quality Index (AQI) by integrating numerical and image data<sup><a href="#ref1">[1]</a></sup>.
-        A precision-integrated numerical branch and an image encoder using EfficientNetB0 extract features<sup><a href="#ref2">[2]</a></sup>.
-        Cross-modal attention is utilized to enhance interaction between modalities, followed by multi-head self-attention
-        and a gated fusion mechanism for robust integration<sup><a href="#ref4">[4]</a></sup>. A contrastive loss function is incorporated during training
-        to align numerical and image embeddings<sup><a href="#ref5">[5]</a></sup>, leading to state-of-the-art performance in AQI regression from multiple data sources<sup><a href="#ref1">[1]</a></sup>.
-      </p>
-    </div>
-
-    <div class="columns">
-      <!-- Left Column -->
-      <div class="column">
-        <!-- Keywords box -->
-        <div class="section dashed-box keyword-section" >
-          <h2>KEYWORDS</h2>
-          <ul>
-            <li><strong>Multimodal Learning</strong> – Integration of image and sensor data.</li>
-            <li><strong>AQI Regression</strong> – Predicting AQI as a continuous variable.</li>
-            <li><strong>Contrastive Learning</strong> – Aligning multi-modal embeddings.</li>
-            <li><strong>Cross-Modal Attention</strong> – Sensor-data attending to image features.</li>
-            <li><strong>Gated Fusion</strong> – Dynamic modality balancing.</li>
-            <li><strong>EfficientNetB0</strong> – Lightweight CNN for feature extraction.</li>
-            <li><strong>Environmental Monitoring</strong> – Urban air quality analysis.</li>
-          </ul>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+        
+            <h1 class="main-title">
+                <strong>AQFusionNet</strong> Robust Multimodal Deep Learning
+                for Air Quality Index Prediction through
+                Atmospheric Imagery and Environmental Sensor
+                Integration
+            </h1>
+            <div class="authors">
+                Koushik Ahmed Kushal <sup>*</sup>, Abdullah Al Mamun
+            </div>
         </div>
+    </header>
 
-        <!-- Introduction -->
-        <div class="section dashed-box">
-          <h2>INTRODUCTION</h2>
-          <p>
-            Air pollution has become one of the most pressing environmental issues affecting public health globally.
-            Accurately estimating the Air Quality Index (AQI) is crucial for developing preventive health measures and
-            urban planning strategies. Traditional AQI prediction models rely solely on numerical sensor data, such as
-            PM2.5, PM10, NO<sub>2</sub>, SO<sub>2</sub>, and CO concentrations. However, these approaches struggle to
-            capture broader contextual cues like weather conditions and environmental visuals <sup><a href="#ref1">[1]</a></sup>.
-          </p>
-          <p>
-            Recent advancements in multimodal machine learning show promising potential in enhancing predictive accuracy
-            by integrating complementary information from multiple modalities. In our proposed system, we combine numerical
-            sensor data with visual data (sky images, urban visuals) using a deep neural model. This enables our model to
-            infer air quality patterns not only from raw sensor metrics but also from the atmospheric and spatial patterns
-            found in images <sup><a href="#ref2">[2]</a></sup>.
-          </p>
-          <p>
-            By incorporating contrastive learning <sup><a href="#ref5">[5]</a></sup>, attention-based fusion <sup><a href="#ref4">[4]</a></sup>, and deep visual encoders <sup><a href="#ref3">[3]</a></sup>,
-            our framework demonstrates superior AQI prediction capabilities. The approach is especially beneficial for urban and semi-urban regions
-            with incomplete sensor coverage <sup><a href="#ref2">[2]</a></sup>.
-          </p>
-        </div>
+    <div class="container">
+        <!-- Introduction Section -->
+        <section class="content-section">
+            <div class="two-column">
+                <div>
+                    <h2 class="section-title">We developed AQFusionNet, a deep learning algorithm to predict the Air Quality Index (AQI) from atmospheric imagery and environmental sensor data.</h2>
+                    <p class="section-text">
+                        Air quality assessment is critical for monitoring and mitigating health risks from pollution-related diseases, which impact millions of people worldwide each year. This process often relies on sensor networks and manual interpretation of environmental data, which can be time-consuming, prone to errors, and limited in regions where reliable sensors or expertise are unavailable.
+                    </p>
+                </div>
+                <img class="intro-image" src="model.jpg" alt="AQFusionNet heatmap visualization">
+            </div>
+        </section>
 
-        <!-- Numerical Embedding -->
-        <div class="section dashed-box">
-          <h2>NUMERICAL EMBEDDING AND GATED FUSION</h2>
-          <p>
-            The numerical branch is specifically designed to extract robust, high-level embeddings from structured environmental data.
-            The input vector contains features such as PM2.5, PM10, temperature, humidity, CO, SO<sub>2</sub>, and NO<sub>2</sub>.
-            These variables are passed through three dense layers with ReLU activation functions, along with dropout regularization to
-            prevent overfitting and enhance generalization <sup><a href="#ref1">[1]</a></sup>.
-          </p>
-          <p>
-            After numerical and visual features are aligned using attention, the representations are concatenated and passed through
-            a gated fusion module. The core of this module is a sigmoid-activated dense layer that learns a soft gate vector. This gate
-            controls how much each modality contributes to the final embedding <sup><a href="#ref4">[4]</a></sup>.
-          </p>
-          <p style="text-align: center;"><code>FusedOutput = Gate * Attended + (1 - Gate) * Combined</code></p>
-          <p>
-            This architecture ensures robustness in real-world conditions. For instance, if a sky image is taken in low light or
-            weather-obscured conditions, the gate learns to favor numerical data. Conversely, if certain sensors are noisy or malfunctioning,
-            image features are weighted more heavily <sup><a href="#ref2">[2]</a></sup>.
-          </p>
-          <p>
-            Empirical results from our experiments demonstrate that this adaptive gating significantly improves performance compared
-            to fixed fusion schemes <sup><a href="#ref1">[1]</a></sup>. It also improves the model's resilience to modality dropout, a common issue in multimodal systems.
-          </p>
-        </div>
-      </div>
+        <!-- Training Section -->
+        <section class="content-section">
+            <div class="two-column">
+                <img class="training-image" src="input.png" alt="AQFusionNet training data visualization">
+                <div>
+                    <h2 class="section-title">AQFusionNet is trained to predict air quality levels by combining cityscape or sky images with available sensor data.</h2>
+                    <p class="section-text">
+                        AQFusionNet is trained on multimodal air quality datasets, combining thousands of environmental sensor readings with corresponding atmospheric images. Each sample is paired with ground-truth AQI values derived from standardized monitoring stations.
+                    </p>
+                    <p class="section-text">
+                        AQFusionNet is trained on a multimodal dataset that combines atmospheric images with corresponding air quality sensor readings. The dataset includes thousands of samples where sky or city images are paired with pollutant measurements (such as PM2.5, PM10, NO₂, and CO) and ground-truth AQI values from monitoring stations.
+                    </p>
+                    <p class="section-text">
+                        This multimodal setup enables the model to learn visual cues of pollution from images while aligning them with numerical sensor data for more accurate AQI prediction."
+                    </p>
+                </div>
+            </div>
+        </section>
 
-      <!-- Right Column -->
-      <div class="column">
-        <!-- Attention Box -->
-        <div class="section dashed-box" style="margin-top: 0px;">
-          <h2>CROSS-MODAL AND SELF-ATTENTION MECHANISMS</h2>
-          <p>
-            To effectively integrate heterogeneous features from numerical and visual inputs, our model employs a cross-modal
-            attention mechanism. The numerical representation acts as the query, while image embeddings serve as keys and values.
-            This allows the numerical features to attend to relevant visual semantics, such as haziness, cloud coverage, or sky tint
-            <sup><a href="#ref2">[2]</a></sup>.
-          </p>
-          <p>
-            After this initial alignment, we pass the fused representation into a multi-head self-attention (MHSA) block.
-            This layer enables the model to model dependencies and interactions between different parts of the feature vector
-            across both modalities. Self-attention proves especially useful in capturing global context, such as how temperature
-            might interact with haze observed in the image <sup><a href="#ref4">[4]</a></sup>.
-          </p>
-          <p>
-            The design draws inspiration from the Transformer architecture, but is adapted for compact multimodal regression tasks.
-            Layer normalization and residual connections ensure training stability and convergence <sup><a href="#ref3">[3]</a></sup>.
-          </p>
-        </div>
+        <!-- Validation Section -->
+        <section class="content-section">
+            <div class="two-column">
+                <div>
+                    <h2 class="section-title">We compared AQFusionNet's performance on different baseline with test set.</h2>
+                    <p class="section-text">
+                        We evaluated AQFusionNet with different CNN backbones against baseline models. On the test set with 1237 samples, the EfficientNet-B0 backbone achieved the best performance with an RMSE of 7.70 and accuracy of 92.02%, outperforming MobileNetV2 (8.89, 90.45%) and ResNet18 (8.67, 90.95%). Its 95% CI of [6.14, 9.20] was also narrower than MobileNetV2 [7.72, 9.96] and ResNet18 [7.13, 9.84], showing greater robustness.
+                    </p>
+                    <p class="section-text">
+                        ROC analysis further confirmed this advantage, with a macro-average AUC of 0.95. Critical AQI categories such as Unhealthy (0.97), Very Unhealthy (0.99), and Hazardous (0.99) achieved near-perfect separability, while Good (0.89) and Unhealthy for Sensitive Groups (0.89) also maintained strong discrimination.
+                    </p>
+                    <p class="section-text">
+                        Overall, AQFusionNet delivers lower errors, tighter confidence intervals, and stronger classification performance than other backbone variants and baselines, establishing it as a reliable solution for multimodal AQI prediction.
+                    </p>
+                </div>
+                <img class="results-image" src="r.png" alt="AQFusionNet performance results and ROC analysis">
+            </div>
+        </section>
 
-        <!-- Image Grid -->
-        <div class="figure">
-          
-          <div class="image-grid">
-            <div>
-              <img src="/AQI_image/11203.jpg" alt="Box 1">
-              <div class="caption">1. Day 1</div>
+
+
+        <!-- Partnership Section -->
+        <section class="content-section partnership-section">
+            <div class="partnership-content">
+                <div class="partnership-images">
+                    <div class="phone-demo">
+                        <img src="check.png" alt="AQFusionNet validation results">
+                    </div>
+                </div>
+                <div>
+                    <h2 class="section-title">We are currently looking for research partnerships with environmental and public health agencies that are interested in working with us to validate this technology.</h2>
+                    <p class="section-text">
+                        We hope that this system may have the potential to improve air quality monitoring and increase access to reliable pollution insights globally.Towards this goal, the future of this research will depend on obtaining access to more diverse datasets for training and improving the model, as well as testing it across new geographic regions and environmental conditions. This additional data will help improve the accuracy and robustness of the model, making it more safe and effective.
+                    </p>
+                    <a href="https://github.com/Koushikl0l/Koushikl0l.github.io/blob/main/Multimodal_Deep_Learning_for_Air_Quality_Index_Prediction_Using_Atmospheric_Images_and_Sensor_Data_IEEE-5.pdf" class="partner-btn">Read AQFusionNet paper</a>
+                </div>
             </div>
-            <div>
-              <img src="/AQI_image/frame_00009.jpg" alt="Box 2">
-              <div class="caption">2. Day 2</div>
-            </div>
-            <div>
-              <img src="/AQI_image/frame_00023.jpg" alt="Box 3">
-              <div class="caption">3. Day 3</div>
-            </div>
-            <div>
-              <img src="/AQI_image/156.jpg" alt="Box 4">
-              <div class="caption">4. Night 1</div>
-            </div>
-            <div>
-              <img src="/AQI_image/168.jpg" alt="Box 5">
-              <div class="caption">5. Night 2</div>
-            </div>
-            <div>
-              <img src="/AQI_image/11225.jpg" alt="Box 6">
-              <div class="caption">6. Day 4</div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </section>
     </div>
 
-    <!-- Conclusion -->
-    <div class="section dashed-box">
-      <h2>CONCLUSION</h2>
-      <p>
-        We present a novel multimodal AQI prediction model that leverages contrastive learning, attention-based fusion, and a
-        gated decision mechanism to improve regression accuracy. By effectively integrating structured sensor data and unstructured
-        visual information, our model outperforms traditional baselines and offers a flexible, real-time solution for environmental
-        monitoring.This approach is especially beneficial in urban environments where data collection is sparse or heterogeneous. Our use of
-        cross-modal attention ensures context-sensitive fusion, while the contrastive objective aligns embeddings during training.
-        The gated fusion mechanism introduces dynamic adaptability based on data reliability.Future research will focus on enhancing interpretability, extending to multi-location AQI forecasting, and incorporating
-        temporal dynamics through recurrent or transformer-based extensions. Our framework can also be adapted to other
-        environmental monitoring tasks such as flood risk estimation or climate condition classification.
-      </p>
-     
-    </div>
-    <!-- References -->
-    <div class="section dashed-box">
-      <h2>REFERENCES</h2>
-      <ol style="padding-left: 22px; line-height: 1.6; margin: 0;">
-        <li>Ma, L., et al. (2022). <em>Deep Fusion for Multimodal Air Quality Prediction</em>. IEEE Transactions on Geoscience and Remote Sensing.</li>
-        <li>Zhang, H., et al. (2021). <em>Image and Sensor Fusion for Urban Air Quality Forecasting</em>. Environmental Modelling & Software.</li>
-        <li>Radford, A., et al. (2021). <em>Learning Transferable Visual Models From Natural Language Supervision</em>. In Proceedings of ICML.</li>
-        <li>Lee, S., et al. (2023). <em>AirFormer: Attention-based Fusion for Air Quality Estimation</em>. AAAI Conference on Artificial Intelligence.</li>
-        <li>Chen, T., et al. (2020). <em>A Simple Framework for Contrastive Learning of Visual Representations</em>. In Proceedings of ICML.</li>
-      </ol>
-    </div>
-    
-    
-  </div>
+    <!-- Copyright Section -->
+    <footer class="copyright-section">
+        <div class="copyright-content">
+            <p class="copyright-text">
+                © 2024 AQFusionNet. All rights reserved. | 
+                Developed by Koushik Ahmed Kushal <sup>*</sup> & Abdullah Al Mamun | 
+                IEEE Publication (Manuscript in preparation)
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
