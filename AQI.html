@@ -607,6 +607,50 @@
                 height: 30px;
             }
         }
+
+        /* Floating widget (bottom-right) */
+        .floating-widget {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: saturate(180%) blur(10px);
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 12px 14px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            font-size: 13px;
+            color: #333;
+            min-width: 200px;
+        }
+
+        .floating-widget .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin: 2px 0;
+        }
+
+        .floating-widget .label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .floating-widget .value {
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 480px) {
+            .floating-widget {
+                right: 10px;
+                bottom: 10px;
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -729,5 +773,59 @@
             </p>
         </div>
     </footer>
+    
+    <!-- Floating Visit Counter -->
+    <div class="floating-widget" aria-live="polite">
+        <div class="row">
+            <span class="label">Visits</span>
+            <span class="value" id="aq-visits">-</span>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        var visitsEl = document.getElementById('aq-visits');
+
+        // Use a global counter API to aggregate visits across devices
+        // Namespace and key are derived from the current site so each page has its own counter
+        var namespace = encodeURIComponent(location.hostname || 'localhost');
+        var key = encodeURIComponent((location.pathname || '/').replace(/\//g, '_'));
+        var api = 'https://api.countapi.xyz/hit/' + namespace + '/' + key;
+
+        // Local fallback display while fetching
+        try {
+            var fallbackKey = 'aq_total_visits_global_' + namespace + '_' + key;
+            var cached = parseInt(localStorage.getItem(fallbackKey) || '0', 10);
+            if (!isNaN(cached) && cached > 0) {
+                visitsEl.textContent = String(cached);
+            }
+        } catch (_) {}
+
+        fetch(api, { cache: 'no-store' })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data && typeof data.value === 'number') {
+                    visitsEl.textContent = String(data.value);
+                    try {
+                        var fallbackKey = 'aq_total_visits_global_' + namespace + '_' + key;
+                        localStorage.setItem(fallbackKey, String(data.value));
+                    } catch (_) {}
+                }
+            })
+            .catch(function() {
+                // If API unavailable, try to at least increment local count so user sees movement
+                try {
+                    var fallbackKey = 'aq_total_visits_global_' + namespace + '_' + key;
+                    var current = parseInt(localStorage.getItem(fallbackKey) || '0', 10);
+                    if (isNaN(current)) current = 0;
+                    var next = current + 1;
+                    localStorage.setItem(fallbackKey, String(next));
+                    visitsEl.textContent = String(next);
+                } catch (_) {
+                    visitsEl.textContent = 'n/a';
+                }
+            });
+    })();
+    </script>
 </body>
 </html>
