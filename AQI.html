@@ -770,6 +770,7 @@
     (function() {
         var el = document.getElementById('aq-visits');
         var configuredPublicUrl = window.AQ_COUNTER_URL || '';
+        var customEndpoint = window.AQ_COUNTER_ENDPOINT || '';
         var pageUrl;
         if (/^https?:$/.test(location.protocol) && location.hostname) {
             pageUrl = location.origin + location.pathname;
@@ -779,21 +780,41 @@
             pageUrl = 'https://your-username.github.io/your-repo/AQI-2.html';
         }
 
-        // Try JSON increment first (works on GitHub Pages)
-        var incrJson = 'https://hits.seeyoufarm.com/api/count/incr?url=' + encodeURIComponent(pageUrl) + '&t=' + Date.now();
-        fetch(incrJson, { cache: 'no-store' })
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                var v = (data && (data.value || data.count));
-                if (typeof v === 'number') {
-                    el.textContent = String(v);
-                } else {
+        // If a custom endpoint is provided, use it first (expects JSON { value: number })
+        if (customEndpoint) {
+            var url = customEndpoint + (customEndpoint.indexOf('?') === -1 ? '?' : '&') + 'key=' + encodeURIComponent('aqfusionnet_aqi2_total_visits') + '&t=' + Date.now();
+            fetch(url, { cache: 'no-store', mode: 'cors' })
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    if (data && typeof data.value === 'number') {
+                        el.textContent = String(data.value);
+                        return;
+                    }
+                    // fall through to public provider
+                    startPublicProvider();
+                })
+                .catch(function() { startPublicProvider(); });
+        } else {
+            startPublicProvider();
+        }
+
+        function startPublicProvider() {
+            // Try JSON increment first (works on GitHub Pages)
+            var incrJson = 'https://hits.seeyoufarm.com/api/count/incr?url=' + encodeURIComponent(pageUrl) + '&t=' + Date.now();
+            fetch(incrJson, { cache: 'no-store' })
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    var v = (data && (data.value || data.count));
+                    if (typeof v === 'number') {
+                        el.textContent = String(v);
+                    } else {
+                        fetchSvgCount();
+                    }
+                })
+                .catch(function() {
                     fetchSvgCount();
-                }
-            })
-            .catch(function() {
-                fetchSvgCount();
-            });
+                });
+        }
 
         function fetchSvgCount() {
             var svgUrl = 'https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=' + encodeURIComponent(pageUrl) + '&t=' + Date.now();
