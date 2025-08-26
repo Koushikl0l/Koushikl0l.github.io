@@ -769,7 +769,15 @@
     <script>
     (function() {
         var el = document.getElementById('aq-visits');
-        var pageUrl = (location.origin && location.origin !== 'null' ? location.origin : '') + location.pathname;
+        var configuredPublicUrl = window.AQ_COUNTER_URL || '';
+        var pageUrl;
+        if (/^https?:$/.test(location.protocol) && location.hostname) {
+            pageUrl = location.origin + location.pathname;
+        } else if (configuredPublicUrl) {
+            pageUrl = configuredPublicUrl;
+        } else {
+            pageUrl = 'https://your-username.github.io/your-repo/AQI-2.html';
+        }
 
         // Try JSON increment first (works on GitHub Pages)
         var incrJson = 'https://hits.seeyoufarm.com/api/count/incr?url=' + encodeURIComponent(pageUrl) + '&t=' + Date.now();
