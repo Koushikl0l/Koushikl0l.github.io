@@ -626,7 +626,7 @@
         }
 
         .floating-widget .row { display: flex; align-items: center; justify-content: center; }
-        .floating-widget img { display: block; max-width: 100%; height: 24px; }
+        .floating-widget .value { font-variant-numeric: tabular-nums; font-weight: 700; }
 
         @media (max-width: 480px) {
             .floating-widget {
@@ -759,22 +759,50 @@
         </div>
     </footer>
     
-    <!-- Floating Visit Counter (universal via badge) -->
+    <!-- Floating Visit Counter (text only) -->
     <div class="floating-widget" aria-live="polite">
         <div class="row">
-            <img id="aq-visit-badge" alt="Total visits" src="" />
+            <span class="label">visit&nbsp;</span><span class="value" id="aq-visits">…</span>
         </div>
     </div>
 
     <script>
     (function() {
-        var badge = document.getElementById('aq-visit-badge');
-        // Use the deployed page URL as the key for a universal count
+        var el = document.getElementById('aq-visits');
         var pageUrl = (location.origin && location.origin !== 'null' ? location.origin : '') + location.pathname;
-        // hits.seeyoufarm.com increments count via image request and returns an SVG badge
-        var src = 'https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=' + encodeURIComponent(pageUrl)
-                  + '&title=Visits&edge_flat=false&count_bg=%238C1515&title_bg=%23F0F0F0';
-        badge.src = src;
+
+        // Try JSON increment first (works on GitHub Pages)
+        var incrJson = 'https://hits.seeyoufarm.com/api/count/incr?url=' + encodeURIComponent(pageUrl) + '&t=' + Date.now();
+        fetch(incrJson, { cache: 'no-store' })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                var v = (data && (data.value || data.count));
+                if (typeof v === 'number') {
+                    el.textContent = String(v);
+                } else {
+                    fetchSvgCount();
+                }
+            })
+            .catch(function() {
+                fetchSvgCount();
+            });
+
+        function fetchSvgCount() {
+            var svgUrl = 'https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=' + encodeURIComponent(pageUrl) + '&t=' + Date.now();
+            fetch(svgUrl, { cache: 'no-store' })
+                .then(function(r) { return r.text(); })
+                .then(function(txt) {
+                    var m = txt && txt.match(/>([0-9][0-9,]*)<\/text>/);
+                    if (m && m[1]) {
+                        el.textContent = m[1].replace(/,/g, '');
+                    } else {
+                        el.textContent = 'n/a';
+                    }
+                })
+                .catch(function() {
+                    el.textContent = 'n/a';
+                });
+        }
     })();
     </script>
 </body>
