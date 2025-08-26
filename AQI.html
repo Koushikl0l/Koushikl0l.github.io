@@ -799,7 +799,8 @@
 
         function tryNextProvider(index) {
             if (index >= providers.length) {
-                visitsEl.textContent = 'n/a';
+                // As a last resort, attempt JSONP with the primary provider
+                tryJsonpFallback();
                 return;
             }
             fetch(providers[index], { cache: 'no-store' })
@@ -814,6 +815,33 @@
                 .catch(function() {
                     tryNextProvider(index + 1);
                 });
+        }
+
+        function tryJsonpFallback() {
+            var cbName = 'aqCountCb_' + Math.random().toString(36).slice(2);
+            var timeoutId;
+            window[cbName] = function(data) {
+                clearTimeout(timeoutId);
+                try { delete window[cbName]; } catch (_) { window[cbName] = undefined; }
+                if (data && typeof data.value === 'number') {
+                    visitsEl.textContent = String(data.value);
+                } else {
+                    visitsEl.textContent = 'n/a';
+                }
+            };
+            var src = 'https://api.countapi.xyz/hit/' + encodeURIComponent(namespace) + '/' + encodeURIComponent(key) + '?callback=' + cbName + '&t=' + Date.now();
+            var s = document.createElement('script');
+            s.src = src;
+            s.async = true;
+            s.onerror = function() {
+                clearTimeout(timeoutId);
+                try { delete window[cbName]; } catch (_) { window[cbName] = undefined; }
+                visitsEl.textContent = 'n/a';
+            };
+            document.head.appendChild(s);
+            timeoutId = setTimeout(function() {
+                s.onerror && s.onerror();
+            }, 6000);
         }
 
         tryNextProvider(0);
