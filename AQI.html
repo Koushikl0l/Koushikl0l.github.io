@@ -785,45 +785,38 @@
     <script>
     (function() {
         var visitsEl = document.getElementById('aq-visits');
+        visitsEl.textContent = '…';
 
-        // Use a fixed global key so all devices share the same counter
-        var namespace = encodeURIComponent('aqfusionnet');
-        var key = encodeURIComponent('aqi2_total_visits');
-        var api = 'https://api.countapi.xyz/hit/' + namespace + '/' + key;
+        // Fixed global key shared by all devices
+        var namespace = 'aqfusionnet';
+        var key = 'aqi2_total_visits';
 
-        // Local fallback display while fetching
-        try {
-            var fallbackKey = 'aq_total_visits_global_' + namespace + '_' + key;
-            var cached = parseInt(localStorage.getItem(fallbackKey) || '0', 10);
-            if (!isNaN(cached) && cached > 0) {
-                visitsEl.textContent = String(cached);
+        // Try multiple providers to avoid ad-block or regional outages
+        var providers = [
+            'https://api.countapi.xyz/hit/' + encodeURIComponent(namespace) + '/' + encodeURIComponent(key) + '?t=' + Date.now(),
+            'https://api.countapi.dev/hit/' + encodeURIComponent(namespace) + '/' + encodeURIComponent(key) + '?t=' + Date.now()
+        ];
+
+        function tryNextProvider(index) {
+            if (index >= providers.length) {
+                visitsEl.textContent = 'n/a';
+                return;
             }
-        } catch (_) {}
+            fetch(providers[index], { cache: 'no-store' })
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    if (data && typeof data.value === 'number') {
+                        visitsEl.textContent = String(data.value);
+                    } else {
+                        tryNextProvider(index + 1);
+                    }
+                })
+                .catch(function() {
+                    tryNextProvider(index + 1);
+                });
+        }
 
-        fetch(api, { cache: 'no-store' })
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                if (data && typeof data.value === 'number') {
-                    visitsEl.textContent = String(data.value);
-                    try {
-                        var fallbackKey = 'aq_total_visits_global_' + namespace + '_' + key;
-                        localStorage.setItem(fallbackKey, String(data.value));
-                    } catch (_) {}
-                }
-            })
-            .catch(function() {
-                // If API unavailable, try to at least increment local count so user sees movement
-                try {
-                    var fallbackKey = 'aq_total_visits_global_' + namespace + '_' + key;
-                    var current = parseInt(localStorage.getItem(fallbackKey) || '0', 10);
-                    if (isNaN(current)) current = 0;
-                    var next = current + 1;
-                    localStorage.setItem(fallbackKey, String(next));
-                    visitsEl.textContent = String(next);
-                } catch (_) {
-                    visitsEl.textContent = 'n/a';
-                }
-            });
+        tryNextProvider(0);
     })();
     </script>
 </body>
