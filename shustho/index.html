@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
         rel="stylesheet">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
@@ -440,103 +442,283 @@
     <!-- Banner Section End -->
 
     <!-- Membership Section Begin -->
-    <section class="membership-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>MEMBERSHIP PLANS</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="membership-item">
-                        <div class="mi-title">
-                            <h4>Basic</h4>
-                            <div class="triangle"></div>
-                        </div>
-                        <h2 class="mi-price">$17<span>/01 mo</span></h2>
-                        <ul>
-                            <li>
-                                <p>Duration</p>
-                                <span>12 months</span>
-                            </li>
-                            <li>
-                                <p>Personal trainer</p>
-                                <span>00 person</span>
-                            </li>
-                            <li>
-                                <p>Amount of people</p>
-                                <span>01 person</span>
-                            </li>
-                            <li>
-                                <p>Number of visits</p>
-                                <span>Unlimited</span>
-                            </li>
-                        </ul>
-                        <a href="#" class="primary-btn membership-btn">Start Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="membership-item">
-                        <div class="mi-title">
-                            <h4>Standard</h4>
-                            <div class="triangle"></div>
-                        </div>
-                        <h2 class="mi-price">$57<span>/01 mo</span></h2>
-                        <ul>
-                            <li>
-                                <p>Duration</p>
-                                <span>12 months</span>
-                            </li>
-                            <li>
-                                <p>Personal trainer</p>
-                                <span>01 person</span>
-                            </li>
-                            <li>
-                                <p>Amount of people</p>
-                                <span>01 person</span>
-                            </li>
-                            <li>
-                                <p>Number of visits</p>
-                                <span>Unlimited</span>
-                            </li>
-                        </ul>
-                        <a href="#" class="primary-btn membership-btn">Start Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="membership-item">
-                        <div class="mi-title">
-                            <h4>Premium</h4>
-                            <div class="triangle"></div>
-                        </div>
-                        <h2 class="mi-price">$98<span>/01 mo</span></h2>
-                        <ul>
-                            <li>
-                                <p>Duration</p>
-                                <span>12 months</span>
-                            </li>
-                            <li>
-                                <p>Personal trainer</p>
-                                <span>01 person</span>
-                            </li>
-                            <li>
-                                <p>Amount of people</p>
-                                <span>01 person</span>
-                            </li>
-                            <li>
-                                <p>Number of visits</p>
-                                <span>Unlimited</span>
-                            </li>
-                        </ul>
-                        <a href="#" class="primary-btn membership-btn">Start Now</a>
-                    </div>
-                </div>
-            </div>
+<!-- Membership Section Begin -->
+<section class="membership-section spad" style="background: #f8fffe; position: relative; overflow: hidden; padding: 100px 0;">
+    <!-- Wave Background -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.12; pointer-events: none; z-index: 0;">
+      <svg viewBox="0 0 1440 320" preserveAspectRatio="none" style="width: 100%; height: 100%;">
+        <path fill="#00a9a4" d="M0,160L48,176C96,192,192,224,288,224C384,224,480,192,576,160C672,128,768,96,864,112C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L0,320Z"></path>
+      </svg>
+    </div>
+  
+    <div class="container position-relative" style="z-index: 1;">
+      <!-- Title - ONE LINE -->
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="fw-bold text-dark d-inline-block" style="font-size: 2.4rem; letter-spacing: 1.2px; text-transform: uppercase; font-family: 'Poppins', sans-serif; line-height: 1.2; white-space: nowrap;">
+            90 DAYS FITNESS TRANSFORMATION PROGRAM
+          </h2>
         </div>
-    </section>
+      </div>
+  
+      <!-- Plans Grid -->
+      <div class="row g-4 g-xl-5 justify-content-center">
+  
+        <!-- ONLINE -->
+        <div class="col-lg-4 col-md-6">
+          <div class="plan-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column" style="border: 1px solid #e0f7f5; min-height: 540px;">
+            <!-- Badge -->
+            <div class="d-flex justify-content-center mb-4">
+              <div class="plan-badge bg-success text-white px-5 py-2 rounded-pill fw-bold text-center" style="font-size: 1rem; min-width: 140px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                ONLINE
+              </div>
+            </div>
+  
+            <!-- Price -->
+            <div class="price-box bg-white border border-3 border-success rounded-4 p-4 mb-4 text-center">
+              <h3 class="price fw-bold mb-1 d-flex align-items-center justify-content-center gap-1" style="font-size: 2.6rem; color: #00a9a4; line-height: 1; white-space: nowrap;">
+                <span style="font-size: 2.2rem;">৳</span>30,000
+              </h3>
+              <p class="text-muted small mb-0 fw-medium">single upfront payment</p>
+            </div>
+  
+            <!-- Features with New Vivid Modern Ticks -->
+            <ul class="list-unstyled flex-grow-1 mb-4" style="font-size: .8rem; line-height: 2; color: #2c3e50;">
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Lifestyle Assessment & Goal Setting</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Personalized Diet, Training & Recovery Plans</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Data Tracking through Shared Journal</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Expert Guidance from a Dedicated Fitness Coach</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Weekly Evaluation Meeting (Online)</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Exclusive Access to a Like-Minded Community</span>
+              </li>
+            </ul>
+  
+            <!-- Button -->
+            <a href="tel:+8801973408659" class="btn btn-teal w-100 py-3 rounded-pill text-white fw-bold mt-auto shadow-sm"
+               style="background: #008c8a; border: none; font-size: 1.1rem; transition: all 0.3s;">
+              Book Now
+            </a>
+          </div>
+        </div>
+  
+        <!-- HYBRID -->
+        <div class="col-lg-4 col-md-6">
+          <div class="plan-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column" style="border: 1px solid #e0f7f5; min-height: 540px;">
+            <div class="d-flex justify-content-center mb-4">
+              <div class="plan-badge bg-warning text-dark px-5 py-2 rounded-pill fw-bold text-center" style="font-size: 1rem; min-width: 280px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                HYBRID (online + offline)
+              </div>
+            </div>
+  
+            <div class="price-box bg-white border border-3 border-warning rounded-4 p-4 mb-4 text-center">
+              <h3 class="price fw-bold mb-1 d-flex align-items-center justify-content-center gap-1" style="font-size: 2.6rem; color: #00a9a4; line-height: 1; white-space: nowrap;">
+                <span style="font-size: 2.2rem;">৳</span>60,000
+              </h3>
+              <p class="text-muted small mb-0 fw-medium">single upfront payment</p>
+            </div>
+  
+            <ul class="list-unstyled flex-grow-1 mb-4" style="font-size: .8rem; line-height: 2; color: #2c3e50;">
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Lifestyle Assessment & Goal Setting</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Personalized Diet, Training & Recovery Plans</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Weekly one 1-on-1 Offline Training Session with the Coach</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Remaining Sessions & Guidance Provided Online</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Data Tracking through Shared Journal</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Weekly Evaluation Meeting (Hybrid: Online/Offline)</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Exclusive Access to a Like-Minded Community</span>
+              </li>
+            </ul>
+  
+            <a href="tel:+8801973408659" class="btn btn-teal w-100 py-3 rounded-pill text-white fw-bold mt-auto shadow-sm"
+               style="background: #008c8a; border: none; font-size: 1.1rem; transition: all 0.3s;">
+              Book Now
+            </a>
+          </div>
+        </div>
+  
+        <!-- OFFLINE -->
+        <div class="col-lg-4 col-md-6">
+          <div class="plan-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column" style="border: 1px solid #e0f7f5; min-height: 540px;">
+            <div class="d-flex justify-content-center mb-4">
+              <div class="plan-badge bg-danger text-white px-5 py-2 rounded-pill fw-bold text-center" style="font-size: 1rem; min-width: 320px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                Total Offline
+              </div>
+            </div>
+  
+            <div class="price-box bg-white border border-3 border-danger rounded-4 p-4 mb-4 text-center">
+              <h3 class="price fw-bold mb-1 d-flex align-items-center justify-content-center gap-1" style="font-size: 2.6rem; color: #00a9a4; line-height: 1; white-space: nowrap;">
+                <span style="font-size: 2.2rem;">৳</span>180,000
+              </h3>
+              <p class="text-muted small mb-0 fw-medium">single upfront payment</p>
+            </div>
+  
+            <ul class="list-unstyled flex-grow-1 mb-4" style="font-size: .8rem; line-height: 2; color: #2c3e50;">
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Lifestyle Assessment & Goal Setting</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Fully Personalized Diet, Training & Recovery Plans</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Weekly three 1-on-1 In-Person Training Sessions for 90 days</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Continuous Data Tracking & Progress Updates</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Hands-On Expert Guidance from a Dedicated Fitness Coach</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Weekly In-Person Evaluation & Feedback Session</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Exclusive Access to a Like-Minded Community</span>
+              </li>
+            </ul>
+  
+            <a href="tel:+8801973408659" class="btn btn-teal w-100 py-3 rounded-pill text-white fw-bold mt-auto shadow-sm"
+               style="background: #008c8a; border: none; font-size: 1.1rem; transition: all 0.3s;">
+              Book Now
+            </a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- CTA Footer -->
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <p class="mb-0 fw-semibold">
+            <span class="text-danger">Spot Limited</span> —
+            Call <a href="tel:+8801973408659" class="text-teal fw-bold">+8801973408659</a> or
+            email <a href="mailto:shusthotechnologies@gmail.com" class="text-teal">shusthotechnologies@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
     <!-- Membership Section End -->
 
     <!-- Register Section Begin -->
@@ -574,7 +756,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="register-pic">
-                        <img src="img/register_.jpg" alt="">
+                        <img src="img/register_.JPG" alt="">
                     </div>
                 </div>
             </div>
