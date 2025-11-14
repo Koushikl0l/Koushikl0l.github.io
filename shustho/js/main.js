@@ -168,6 +168,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+
+/*------------------------
+    Blog Slider
+-----------------------*/
+$(".blog-slider").owlCarousel({
+    items: 3,
+    dots: false,  // No dots, only arrows
+    autoplay: true,
+    loop: true,
+    smartSpeed: 1200,
+    nav: true,
+    navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+    responsive: {
+        0: {
+            items: 1,
+            nav: true  // Arrows always visible
+        },
+        768: {
+            items: 2,
+            nav: true
+        },
+        992: {
+            items: 3,
+            nav: true
+        }
+    }
+});
+
     
 
 })(jQuery);
