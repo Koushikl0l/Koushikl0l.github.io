@@ -2149,6 +2149,12 @@ ul, ol {
 .shustho-card-img {
     width: 50%;
     background: #ccc center/cover no-repeat;
+	/*object-fit: contain;*/
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
 }
 
 .shustho-card-content {
@@ -2298,5 +2304,97 @@ ul, ol {
         width: 40px;
         height: 40px;
         font-size: 18px;
+    }
+}
+
+/* for membership plan hover effects */
+.transition-all { transition: all 0.3s ease; }
+    .plan-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.12) !important;
+    }
+    .btn-teal:hover {
+        background: linear-gradient(135deg, #007a77, #005a58) !important;
+        transform: translateY(-2px);
+    }
+    .text-teal { color: #00a9a4 !important; }
+    .wave-bg svg { transform: rotate(180deg); }
+
+
+
+/* END OF CSS FILE */
+/*---------------------
+  Blog Slider
+-----------------------*/
+.blog-slider {
+    position: relative;
+    margin: 0 -15px;  /* Adjust for container padding */
+}
+
+.blog-slider .single-blog-item {
+    padding: 15px;  /* Spacing between cards */
+    transition: transform 0.3s ease;
+}
+
+.blog-slider .single-blog-item:hover {
+    transform: translateY(-5px);  /* Subtle hover effect */
+}
+
+.blog-slider .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;  /* Allows clicking through to cards */
+}
+
+.blog-slider .owl-nav button {
+    pointer-events: all;  /* Re-enable clicks on arrows */
+    background: rgba(255, 255, 255, 0.8) !important;
+    color: #f15d44 !important;  /* Match your theme color */
+    font-size: 20px;
+    border: none;
+    outline: none;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin: 0 10px;  /* Push arrows slightly outward */
+}
+
+.blog-slider .owl-nav button:hover {
+    background: #f15d44 !important;
+    color: #fff !important;
+    transform: scale(1.1);
+}
+
+.blog-slider .owl-nav .owl-prev {
+    left: -20px;  /* Position left arrow outside */
+    position: absolute;
+}
+
+.blog-slider .owl-nav .owl-next {
+    right: -20px;  /* Position right arrow outside */
+    position: absolute;
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 767px) {
+    .blog-slider .owl-nav button {
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+    .blog-slider .owl-nav .owl-prev {
+        left: -10px;
+    }
+    .blog-slider .owl-nav .owl-next {
+        right: -10px;
     }
 }
