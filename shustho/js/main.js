@@ -205,6 +205,7 @@ $(".blog-slider").owlCarousel({
     Trainer Slider (Shop Slider)
 -----------------------*/
 // Shop With SHUSTHO Slider
+// Shop With SHUSTHO – Equal Height Cards Slider
 $(".shustho-shop-slider").owlCarousel({
     loop: true,
     margin: 30,
