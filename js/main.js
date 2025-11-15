@@ -199,6 +199,29 @@ $(".blog-slider").owlCarousel({
 
     
 
+
+
+/*------------------------
+    Trainer Slider (Shop Slider)
+-----------------------*/
+// Shop With SHUSTHO Slider
+$(".shustho-shop-slider").owlCarousel({
+    loop: true,
+    margin: 30,
+    autoplay: true,
+    autoplayTimeout: 5000,
+    smartSpeed: 800,
+    dots: false,
+    nav: true,
+    navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+    responsive: {
+        0: { items: 1 },
+        768: { items: 2 },
+        992: { items: 3 }
+    }
+});
+
+
 })(jQuery);
 
 
