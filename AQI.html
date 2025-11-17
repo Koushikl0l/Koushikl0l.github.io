@@ -412,11 +412,22 @@
             border: 2px solid #8C1515;
             box-shadow: 0 2px 4px rgba(140, 21, 21, 0.2);
         }
-
+      /*
         .partner-btn::before {
             content: "📄";
             font-size: 16px;
         }
+        */
+
+        .partner-btn::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6f/ArXiv_logo_2022.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
         .partner-btn:hover {
             background: #B1040E;
