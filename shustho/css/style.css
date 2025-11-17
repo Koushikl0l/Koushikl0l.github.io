@@ -2087,17 +2087,14 @@ ul, ol {
 
 
 
-
-
-/* SHUSTHO PREMIUM SLIDER - EXACTLY LIKE YOUR SCREENSHOT */
-/* SHUSTHO SLIDER - FINAL 2025 VERSION (BD Optimized) */
+/* SHUSTHO SLIDER - Below Latest Blog */
 .shustho-slider-section {
     background: rgba(244, 244, 255, 0.3) !important;
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border-bottom: 1px solid rgba(0, 169, 164, 0.15);
-    min-height: 66.666vh;
-    height: 66.666vh;
+    min-height: 50vh;     /* 66.666vh */
+    height: auto;     /* 66.666vh */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2271,9 +2268,9 @@ ul, ol {
 /* MOBILE */
 @media (max-width: 992px) {
     .shustho-slider-section {
-        min-height: 70vh;
+        min-height: 50vh;
         height: auto;
-        padding: 60px 15px;
+        padding: 40px 15px; /*60pxx 15 px */
     }
     .slider-container { height: auto; }
     .shustho-card {
@@ -2304,6 +2301,18 @@ ul, ol {
         width: 40px;
         height: 40px;
         font-size: 18px;
+    }
+}
+
+@media (min-width: 993px) { /* Target emulated desktop on mobile */
+    .latest-blog-section.spad {
+        padding-bottom: 50px; /* Halve it */
+    }
+    .shustho-slider-section {
+        padding: 30px; /* Reduce */
+    }
+    .partners-section.spad {
+        padding-top: 50px !important; /* 20  */
     }
 }
 
