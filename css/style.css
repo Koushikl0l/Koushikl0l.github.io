@@ -2087,17 +2087,14 @@ ul, ol {
 
 
 
-
-
-/* SHUSTHO PREMIUM SLIDER - EXACTLY LIKE YOUR SCREENSHOT */
-/* SHUSTHO SLIDER - FINAL 2025 VERSION (BD Optimized) */
+/* SHUSTHO SLIDER - Below Latest Blog */
 .shustho-slider-section {
     background: rgba(244, 244, 255, 0.3) !important;
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border-bottom: 1px solid rgba(0, 169, 164, 0.15);
-    min-height: 66.666vh;
-    height: 66.666vh;
+    min-height: 50vh;     /* 66.666vh */
+    height: auto;     /* 66.666vh */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2271,9 +2268,9 @@ ul, ol {
 /* MOBILE */
 @media (max-width: 992px) {
     .shustho-slider-section {
-        min-height: 70vh;
+        min-height: 50vh;
         height: auto;
-        padding: 60px 15px;
+        padding: 40px 15px; /*60pxx 15 px */
     }
     .slider-container { height: auto; }
     .shustho-card {
@@ -2304,6 +2301,18 @@ ul, ol {
         width: 40px;
         height: 40px;
         font-size: 18px;
+    }
+}
+
+@media (min-width: 993px) { /* Target emulated desktop on mobile */
+    .latest-blog-section.spad {
+        padding-bottom: 50px; /* Halve it */
+    }
+    .shustho-slider-section {
+        padding: 30px; /* Reduce */
+    }
+    .partners-section.spad {
+        padding-top: 50px !important; /* 20  */
     }
 }
 
@@ -2408,6 +2417,9 @@ ul, ol {
 /*==================================================================
   SHOP WITH SHUSTHO – Clean Modern Product Slider
 ====================================================================*/
+/*==================================================================
+  SHOP WITH SHUSTHO – SAME HEIGHT CARDS + MODERN DESIGN
+====================================================================*/
 
 .shustho-shop-section {
     background: #f8f9fa;
@@ -2422,18 +2434,30 @@ ul, ol {
     letter-spacing: 1px;
 }
 
+/* Slider */
 .shustho-shop-slider {
     margin: 0 -15px;
 }
 
+.shustho-shop-slider .owl-stage {
+    display: flex;
+}
+
+.shustho-shop-slider .owl-item {
+    display: flex;
+    padding: 0 15px;
+}
+
+/* Card – Same Height */
 .shustho-product-card {
     background: #fff;
     border-radius: 20px;
-    padding: 20px;
-    text-align: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 15px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
 }
 
 .shustho-product-card:hover {
@@ -2441,16 +2465,21 @@ ul, ol {
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
+/* Fixed Image Height */
 .product-image-wrapper {
+    height: 280px;
     background: #fff;
     border-radius: 16px;
-    padding: 30px;
-    margin-bottom: 18px;
+    padding: 20px;
+    margin: 20px 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .product-image-wrapper img {
-    max-height: 280px;
+    max-height: 100%;
     width: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
@@ -2460,11 +2489,21 @@ ul, ol {
     transform: scale(1.05);
 }
 
+/* Text Area – Takes Remaining Space */
+.card-body {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
 .product-title {
     font-size: 20px;
     font-weight: 700;
     color: #111;
-    margin: 12px 0 8px;
+    margin: 0 0 8px;
     line-height: 1.3;
 }
 
@@ -2478,14 +2517,15 @@ ul, ol {
     letter-spacing: 1.5px;
     padding: 8px 18px;
     border-radius: 30px;
-    margin: 10px 0 14px;
+    margin: 8px 0 12px;
 }
 
 .product-desc {
     font-size: 14px;
     color: #777;
-    margin-bottom: 16px;
+    margin: 0 0 16px;
     line-height: 1.6;
+    flex-grow: 1;
 }
 
 .product-social a {
@@ -2499,7 +2539,7 @@ ul, ol {
     color: #00A9A4;
 }
 
-/* Owl Carousel Navigation */
+/* Navigation Arrows */
 .shustho-shop-slider .owl-nav {
     position: absolute;
     top: 50%;
@@ -2521,7 +2561,6 @@ ul, ol {
     border-radius: 50%;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     transition: all 0.3s ease;
-    margin: 0 10px;
 }
 
 .shustho-shop-slider .owl-nav button:hover {
@@ -2535,6 +2574,7 @@ ul, ol {
 
 /* Responsive */
 @media (max-width: 767px) {
+    .product-image-wrapper { height: 220px; }
     .shustho-shop-slider .owl-nav button {
         width: 40px;
         height: 40px;
@@ -2543,4 +2583,97 @@ ul, ol {
     }
     .shustho-shop-slider .owl-nav .owl-prev { left: -10px; }
     .shustho-shop-slider .owl-nav .owl-next { right: -10px; }
+}
+
+
+
+/*==================================================================
+  Corporate Wellness (Shustho Style)
+====================================================================*/
+.get-training-section {
+    position: relative;
+    min-height: 580px;
+    background: linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.65)),
+                url('../img/corporate_wellness.JPG') center/cover no-repeat;
+				/* ↑↑↑ Changed from 0.78/0.82 → 0.58/0.65 (you can even go lower if you want) */
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    padding: 60px 0;
+    margin: 80px 0 0;
+    background-attachment: fixed; /* optional: nice parallax effect */
+}
+
+.get-training-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.get-training-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.get-training-text {
+    max-width: 620px;
+}
+
+.get-training-text h1 {
+    font-size: 58px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1.1;
+    margin-bottom: 28px;
+    color: #ffffff;
+}
+
+.get-training-text p {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 50px;
+    opacity: .9;
+    color: #ffffff;
+}
+
+/* Reuse your existing primary-btn - no changes needed! */
+
+/* Responsive */
+@media (max-width: 992px) {
+    .get-training-section {
+        min-height: 700px;
+        padding: 100px 0;
+        text-align: center;
+    }
+    .get-training-text {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .get-training-text h1 {
+        font-size: 52px;
+    }
+    .get-training-text p {
+        font-size: 18px;
+    }
+    .primary-btn {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .get-training-section {
+        min-height: 620px;
+    }
+    .get-training-text h1 {
+        font-size: 44px;
+        letter-spacing: 2px;
+    }
+    .get-training-text p {
+        font-size: 17px;
+    }
 }
