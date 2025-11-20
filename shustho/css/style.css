@@ -2594,7 +2594,7 @@ ul, ol {
     position: relative;
     min-height: 580px;
     background: linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.65)),
-                url('../img/corporate_wellness.JPG') center/cover no-repeat;
+                url('../img/corporate_wellness.jpg') center/cover no-repeat;
 				/* ↑↑↑ Changed from 0.78/0.82 → 0.58/0.65 (you can even go lower if you want) */
     display: flex;
     align-items: center;
