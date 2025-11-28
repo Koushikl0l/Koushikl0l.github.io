@@ -2594,7 +2594,7 @@ ul, ol {
     position: relative;
     min-height: 580px;
     background: linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.65)),
-                url('../img/corporate_wellness.jpg') center/cover no-repeat;
+                url('../img/corporate_wellness.JPG') center/cover no-repeat;
 				/* ↑↑↑ Changed from 0.78/0.82 → 0.58/0.65 (you can even go lower if you want) */
     display: flex;
     align-items: center;
@@ -2676,4 +2676,186 @@ ul, ol {
     .get-training-text p {
         font-size: 17px;
     }
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ======================== CORPORATE TESTIMONIAL SECTION (100% ISOLATED) ======================== */
+.corporate-testimonial-section {
+  background: linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.92)),
+              url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat fixed;
+  color:  #ffffff;
+  font-family: 'Inter', sans-serif;
+  padding: 90px 20px 110px;
+}
+/* 2. Extra safety – force white on the most important text elements */
+.corporate-testimonial-title,
+.corporate-testimonial-subtitle,
+.corporate-testimonial-name,
+.corporate-testimonial-text {
+    color: #ffffff !important;
+}
+
+/* 3. Make sure the stars stay gold (not affected by the white rule above) */
+.corporate-testimonial-stars {
+    color: #FFD700 !important;
+}
+
+.corporate-testimonial-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* LEFT */
+.corporate-testimonial-left {
+  flex: 0 0 360px;
+  padding-top: 6px;
+}
+.corporate-testimonial-title {
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 0.96;
+  margin-bottom: 16px;
+}
+.corporate-testimonial-subtitle {
+  font-size: 13px;
+  line-height: 1.65;
+  opacity: 0.88;
+  max-width: 360px;
+}
+
+/* RIGHT GRID */
+.corporate-testimonial-right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 28px;
+  align-content: start;
+}
+
+/* CARD */
+.corporate-testimonial-card {
+  background: rgba(30, 30, 30, 0.68);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 22px 20px;
+  min-height: 210px;
+  opacity: 0.95;
+}
+.corporate-testimonial-name {
+  font-size: 14.5px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  opacity: 0.98;
+}
+.corporate-testimonial-stars {
+  color: #FFD700;
+  font-size: 16px;
+  margin-bottom: 10px;
+  letter-spacing: 1.2px;
+}
+.corporate-testimonial-text {
+  font-size: 13.8px;
+  line-height: 1.62;
+  opacity: 0.90;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .corporate-testimonial-wrapper {
+    gap: 40px;
+    padding: 0 10px;
+  }
+  .corporate-testimonial-title { font-size: 50px; }
+  .corporate-testimonial-right { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .corporate-testimonial-section { padding: 60px 20px; }
+  .corporate-testimonial-wrapper { 
+    flex-direction: column; 
+    gap: 35px; 
+  }
+  .corporate-testimonial-left { flex: none; }
+  .corporate-testimonial-title { font-size: 42px; }
+  .corporate-testimonial-subtitle { font-size: 15px; }
+  .corporate-testimonial-card { 
+    padding: 20px; 
+    min-height: 180px; 
+  }
+}
+
+/* ==== SHUSTHO LIFE CONTACT FORM STYLES (NO CONFLICT) ==== */
+.shustho-contact-section { padding: 60px 20px; background-color: #f8f9fa; }
+.shustho-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
+.shustho-contact-form, .shustho-map { flex: 1; min-width: 300px; max-width: 520px; }
+.shustho-contact-form h2 { font-size: 32px; margin-bottom: 16px; color: #1a1a1a; }
+.shustho-contact-form p { margin-bottom: 32px; color: #555; font-size: 16px; }
+
+.shustho-form-group { margin-bottom: 22px; }
+.shustho-form-row { display: flex; gap: 16px; }
+.shustho-form-row .shustho-form-group { flex: 1; }
+
+.shustho-contact-form label { 
+  display: block; 
+  margin-bottom: 8px; 
+  font-weight: 500; 
+  color: #333; 
+}
+
+.shustho-contact-form input,
+.shustho-contact-form select,
+.shustho-contact-form textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+.shustho-contact-form input:focus,
+.shustho-contact-form select:focus,
+.shustho-contact-form textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+.shustho-contact-form textarea { min-height: 130px; resize: vertical; }
+.shustho-country-code { display: flex; gap: 10px; }
+.shustho-country-code select { width: 110px; flex-shrink: 0; }
+
+#shusthoSubmitBtn {
+  background:#1a1a1a; color:#fff; padding:14px 32px; border:none; border-radius:8px; 
+  font-size:16px; cursor:pointer; transition:background 0.3s;
+}
+#shusthoSubmitBtn:hover:not(:disabled) { background:#333; }
+#shusthoSubmitBtn:disabled { background:#666; cursor:not-allowed; }
+
+.shustho-map-container {
+  width: 100%; height: 480px; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+#shusthoStatus { margin-top: 15px; padding: 12px; border-radius: 8px; font-weight: 500; }
+.shustho-success { background:#d4edda; color:#155724; border:1px solid #c3e6cb; }
+.shustho-error   { background:#f8d7da; color:#721c24; border:1px solid #f5c6cb; }
+
+@media (max-width: 768px) {
+  .shustho-container { flex-direction: column; gap: 40px; }
+  .shustho-contact-form h2 { font-size: 28px; }
 }
