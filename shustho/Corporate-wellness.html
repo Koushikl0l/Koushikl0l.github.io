@@ -12,7 +12,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
         rel="stylesheet">
-
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="main.js"></script> <!-- Or wherever your JS is -->
+
 </head>
 
 <body>
@@ -129,6 +131,118 @@
     </div>
     <!-- Gallery Section End -->
 
+
+    <!-- Corporate Testimonial Section Start -->
+    <section class="corporate-testimonial-section">
+        <div class="corporate-testimonial-wrapper">
+          
+          <!-- LEFT -->
+          <div class="corporate-testimonial-left">
+            <h1 class="corporate-testimonial-title">Corporates<br>love us!</h1>
+            <p class="corporate-testimonial-subtitle">
+              Our goal is to help your employees with their health and fitness goals, and help your organisation create a positive, energised working environment. Here’s what some leading companies had to say about SHUSTHO’s Corporate Wellness services.
+            </p>
+          </div>
+      
+          <!-- RIGHT – Cards -->
+          <div class="corporate-testimonial-right">
+            <div class="corporate-testimonial-card">
+              <div class="corporate-testimonial-name">Ms. Vani Doshi</div>
+              <div class="corporate-testimonial-stars">★★★★★</div>
+              <div class="corporate-testimonial-text">Kudos to the SHUSTHO Corporate Wellness team for delivering an out-of-the-box session and going above and beyond our expectations from it!</div>
+            </div>
+            <div class="corporate-testimonial-card">
+              <div class="corporate-testimonial-name">Mandeep Shreshtha</div>
+              <div class="corporate-testimonial-stars">★★★★★</div>
+              <div class="corporate-testimonial-text">My journey from 86 Kgs to 75 Kgs would not have been possible without the excellent support from the SHUSTHO Corporate Wellness team</div>
+            </div>
+            <div class="corporate-testimonial-card">
+              <div class="corporate-testimonial-name">Nitin Sachdeva</div>
+              <div class="corporate-testimonial-stars">★★★★★</div>
+              <div class="corporate-testimonial-text">The 12-Week program created by SHUSTHO Corporate Wellness team was holistic and covered every aspect of wellness and health. The dedication and passion of the team really made all the difference.</div>
+            </div>
+            <div class="corporate-testimonial-card">
+              <div class="corporate-testimonial-name">Sakshi Sharma</div>
+              <div class="corporate-testimonial-stars">★★★★★</div>
+              <div class="corporate-testimonial-text">A big Thumbs Up to the SHUSTHO Corporate Wellness team for introducing me to Quantified Nutrition and also helping me change my lifestyle from sedentary to active.</div>
+            </div>
+            <div class="corporate-testimonial-card">
+              <div class="corporate-testimonial-name">Mohit Aggarwal</div>
+              <div class="corporate-testimonial-stars">★★★★★</div>
+              <div class="corporate-testimonial-text">The SHUSTHO Corporate Wellness team didn’t just help me lose 9 kgs in 3 months but also made me a hero in my son’s eyes!</div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+<!-- Corporate Testimonial Section End -->
+
+
+<!-- ==== SHUSTHO LIFE CONTACT SECTION START ==== -->
+<section class="shustho-contact-section">
+    <div class="shustho-container">
+      
+      <!-- Contact Form -->
+      <div class="shustho-contact-form">
+        <h2>Connect with us</h2>
+        <p>Drop your contact details and our representative will get in touch with you to discuss how we can help make your workforce healthier, happier, and more productive.</p>
+  
+        <form id="shusthoContactForm">
+          <div class="shustho-form-group">
+            <label for="shusthoFullName">Full Name <span style="color: red;">*</span></label>
+            <input type="text" id="shusthoFullName" required>
+          </div>
+  
+          <div class="shustho-form-row">
+            <div class="shustho-form-group">
+              <label for="shusthoCompanyName">Company Name <span style="color: red;">*</span></label>
+              <input type="text" id="shusthoCompanyName" required>
+            </div>
+            <div class="shustho-form-group">
+              <label for="shusthoCompanyEmail">Company Email Id <span style="color: red;">*</span></label>
+              <input type="email" id="shusthoCompanyEmail" required>
+            </div>
+          </div>
+  
+          <div class="shustho-form-group">
+            <label for="shusthoMobile">Mobile Number <span style="color: red;">*</span></label>
+            <div class="shustho-country-code">
+              <select id="shusthoCountryCode" required>
+                <option value="+880">+880 (BD)</option>
+                <option value="+91">+91 (IN)</option>
+                <option value="+1">+1 (US)</option>
+              </select>
+              <input type="tel" id="shusthoMobile" placeholder="e.g. 17xxxxxxxx" required>
+            </div>
+          </div>
+  
+          <div class="shustho-form-group">
+            <label for="shusthoMessage">Your Message <span style="color: red;">*</span></label>
+            <textarea id="shusthoMessage" required></textarea>
+          </div>
+  
+          
+          <button type="submit" id="shusthoSubmitBtn">Send Enquiry</button>
+          <div id="shusthoStatus"></div>
+        </form>
+      </div>
+  
+      <!-- Map -->
+      <div class="shustho-map">
+        <div class="shustho-map-container">
+          <iframe
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD500KZjSof98vSBhKTytpoP3rlJi69WXM&q=House+938,+Road+13,+Avenue+2,+Mirpur+DOHS,+Dhaka,+Bangladesh"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  <!-- ==== SHUSTHO LIFE CONTACT SECTION END ==== -->
+
+
     <!-- Footer Section Begin -->
     <footer class="footer-section">
         <div class="container">
@@ -188,6 +302,8 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
+    <!-- EMAILJS SDK - MUST BE HERE -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
