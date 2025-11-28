@@ -223,6 +223,75 @@ $(".shustho-shop-slider").owlCarousel({
 });
 
 
+
+/* ========================================================= */
+/*      CONTACT FORM WITH EMAILJS – BULLETPROOF 2025 FIX    */
+/* ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // YOUR EMAILJS CREDENTIALS (keep as-is)
+    const PUBLIC_KEY  = "Lgtf2hkt1iy-nkWqO";
+    const SERVICE_ID  = "service_swiel8b";
+    const TEMPLATE_ID = "template_541kvkl";
+
+    emailjs.init(PUBLIC_KEY);
+
+    const form   = document.getElementById("shusthoContactForm");
+    const btn    = document.getElementById("shusthoSubmitBtn");
+    const status = document.getElementById("shusthoStatus");
+
+    if (!form || !btn || !status) return;
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        btn.disabled = true;
+        btn.textContent = "Sending...";
+        status.innerHTML = "";
+
+        const formData = {
+            from_name:     document.getElementById("shusthoFullName").value.trim(),
+            company_name:  document.getElementById("shusthoCompanyName").value.trim(),
+            company_email: document.getElementById("shusthoCompanyEmail").value.trim(),
+            mobile:        document.getElementById("shusthoCountryCode").value + " " +
+                           document.getElementById("shusthoMobile").value.trim(),
+            message:       document.getElementById("shusthoMessage").value.trim()
+        };
+
+        // Light validation
+        if (!formData.from_name || !formData.company_name || !formData.company_email || 
+            !formData.mobile.includes(" ") || !formData.message) {
+            status.innerHTML = '<div class="shustho-error">Please fill all fields correctly.</div>';
+            resetBtn();
+            return;
+        }
+
+        // OFFICIAL EMAILJS V4 HANDLING – .then(success, error) prevents false errors
+        emailjs.send(SERVICE_ID, TEMPLATE_ID, formData).then(
+            function(response) {
+                // TRUE SUCCESS – only runs on HTTP 200/OK
+                console.log("SUCCESS!", response.status, response.text);
+                status.innerHTML = '<div class="shustho-success">Thank you! Your message has been sent successfully. We will contact you soon.</div>';
+                form.reset();
+                resetBtn();
+            },
+            function(error) {
+                // TRUE FAILURE only
+                console.error("REAL EmailJS Error:", error);
+                status.innerHTML = '<div class="shustho-error">Failed to send. Please email us directly at mukit@shustho.life</div>';
+                resetBtn();
+            }
+        );
+
+        function resetBtn() {
+            btn.disabled = false;
+            btn.textContent = "Send Enquiry";
+        }
+    });
+});
+
+
 })(jQuery);
 
 
