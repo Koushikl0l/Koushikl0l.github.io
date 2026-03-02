@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Gutim Template">
+    <meta name="keywords" content="Gutim, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SHUSTHO--Live Healthy</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="js/popup.js"></script>
+    <script src="main.js"></script> <!-- Or wherever your JS is -->
+    
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="img/Shustho_logo.png" alt="" style="width:200px; height:auto; object-fit:contain;">
+
+                </a>
+            </div>
+            <div class="nav-menu">
+                <nav class="mainmenu mobile-menu">
+                    <ul>
+                        <li class="active"><a href="./index.html">Home</a></li>
+                        <li><a href="./about-us.html">About</a></li>
+                        <li><a href="./classes.html">Classes</a></li>
+                        <!-- NEW MENU ITEM ADDED HERE -->
+                        <li><a href="./Corporate-wellness.html">Corporate Wellness</a></li>
+                        <li><a href="./blog.html">Blog</a></li>
+                        <li><a href="./gallery.html">Gallery</a></li>
+                        <li><a href="./contact.html">Contacts</a></li>
+                    </ul>
+                </nav>
+                <a href="sign-up.html" class="primary-btn signup-btn">Sign Up Today</a>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero-section set-bg" data-setbg="img/main.png">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="hero-text">
+                        <span>FITNESS ELEMENTS</span>
+                        <!--
+                        <h1>
+                            Fuel your fitness. Live 
+                            <span style="color:#00A9A4; font-size:inherit; font-weight:inherit; line-height:inherit;">
+                              Shustho.
+                            </span>
+                          </h1>
+                        -->
+                        <h1 style="font-weight:600; font-size:4.8rem; color:white;">
+                            Fuel your fitness. Live 
+                            <span style="
+                              color:#00A9A4;
+                              font-size:inherit; font-weight:inherit; line-height:inherit;
+                              text-shadow: 2px 2px 6px rgba(67, 21, 21, 0.4);
+                            ">
+                              Shustho.
+                            </span>
+                          </h1>
+                          
+                        <!--
+                        <p>Shustho comes with user-friendly packages <br /> Pilates - Yoga - Weight Loss Session - 
+                            Private Fit Session - Nutrition Session</p>
+                        
+                            <p style="
+                            display: inline-block;
+                            background: #00A9A4;
+                            color: #ffffff;
+                            font-weight:400;
+                            padding: 10px 20px;
+                            border-radius: 8px;
+                            line-height: 1.6;
+                            opacity: .8;
+                            backdrop-filter: blur(2px);
+                          ">
+                            Shustho comes with user-friendly packages <br>
+                            Corporate Wellness Program - Fat Loss Program - Strength & Endurance Training Program - 
+                            Nutrition Education & Habit Building Program - Fitness & Lifestyle Coaching.
+                          </p>
+                        -->
+                    
+                        <a href="#" class="primary-btn" onclick="openPopup(event)">Read More</a>
+                            <!-- Hidden Popup -->
+                            <div id="imagePopup" class="popup">
+                            <div class="popup-content">
+                                <span class="close" onclick="closePopup()">&times;</span>
+                                <img src="img/Mukit_Profile.png" alt="Shustho" style="max-width:100%; height:auto;">
+                            </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- About Section Begin -->
+    <section class="about-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <!--
+                    <div class="about-pic">
+                        <img src="img/about.JPG" alt="">
+                        <a href="https://youtu.be/qAOOxY33Kzs" class="play-btn video-popup">
+                            <img src="img/play.png" alt="Play Video">
+                        </a>
+                    </div>
+                -->
+                <div class="about-pic">
+                    <!-- Background Image -->
+                    <img src="img/about.JPG" alt="Shustho Health Transformation" style="width:100%; display:block;">
+                
+                    <!-- YouTube Video (Hidden until play) -->
+                    <!-- ?autoplay=1 → starts playing immediately -->
+                    <!-- &start=4 → starts at 4 seconds (same as t=4s) -->
+                    <div class="youtube-embed" 
+                         style="display:none; position:absolute; top:0; left:0; width:100%; height:100%;">
+                         <iframe width="560" height="315" src="https://www.youtube.com/embed/z6ffSvkAkSM?si=1Gcx-qtEMKvLmDng" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                
+                    <!-- Play Button - Click to Show Video -->
+                    <a href="#" 
+                       class="play-btn" 
+                       onclick="this.style.display='none'; this.previousElementSibling.style.display='block'; return false;">
+                        <img src="img/play.png" alt="Play Video">
+                    </a>
+                </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <h2>Story About Us</h2>
+                        <p class="first-para">Shustho is a fitness startup dedicatedly working to bringing quantifiable and 
+                            meaningful health transformations to corporate and retail consumers.</p>
+                        <p class="second-para">Our certified fitness coaches are uniquely qualified to address your employee wellbeing,
+                             improve employee satisfaction and boost morale; resulting in improved productivity.</p>
+                        <a href="#" class="primary-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Services Section Begin -->
+    <section class="services-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="services-pic">
+                        <img src="img/services/service-pic.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-items">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="services-item bg-gray">
+                                    <img src="img/services/service-icon-1.png" alt="">
+                                    <h4>Strategies</h4>
+                                    <p>Aenean massa. Cum sociis Theme et natoque penatibus et magnis dis part urient
+                                        montes.</p>
+                                </div>
+                                <div class="services-item bg-gray pd-b">
+                                    <img src="img/services/service-icon-3.png" alt="">
+                                    <h4>Workout</h4>
+                                    <p>Aenean massa. Cum sociis Theme et natoque penatibus et magnis dis part urient
+                                        montes.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="services-item">
+                                    <img src="img/services/service-icon-2.png" alt="">
+                                    <h4>Yoga</h4>
+                                    <p>Aenean massa. Cum sociis Theme et natoque penatibus et magnis dis part urient
+                                        montes.</p>
+                                </div>
+                                <div class="services-item pd-b">
+                                    <img src="img/services/service-icon-4.png" alt="">
+                                    <h4>Weight Loss</h4>
+                                    <p>Aenean massa. Cum sociis Theme et natoque penatibus et magnis dis part urient
+                                        montes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+    <!-- Classes Section Begin -->
+    <section class="classes-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>UNLIMITED CLASSES</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row classes-slider owl-carousel">
+                <div class="col-lg-4">
+                    <div class="single-class-item set-bg" data-setbg="img/classes/classes-1.jpg">
+                        <div class="si-text">
+                            <h4>Yoga</h4>
+                            <span><i class="fa fa-user"></i> Ryan Knight</span>
+                        </div>
+                    </div>
+                    <div class="single-class-item set-bg" data-setbg="img/classes/classes-4.jpg">
+                        <div class="si-text">
+                            <h4>Karate</h4>
+                            <span><i class="fa fa-user"></i> Kevin McCormick</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-class-item set-bg" data-setbg="img/classes/classes-2.jpg">
+                        <div class="si-text">
+                            <h4>Running</h4>
+                            <span><i class="fa fa-user"></i> Randy Rivera</span>
+                        </div>
+                    </div>
+                    <div class="single-class-item set-bg" data-setbg="img/classes/classes-5.jpg">
+                        <div class="si-text">
+                            <h4>Dance</h4>
+                            <span><i class="fa fa-user"></i> Russell Lane</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-class-item set-bg" data-setbg="img/classes/classes-3.jpg">
+                        <div class="si-text">
+                            <h4>Personal Training</h4>
+                            <span><i class="fa fa-user"></i> Cole Robertson</span>
+                        </div>
+                    </div>
+                    <div class="single-class-item set-bg" data-setbg="img/classes/classes-6.jpg">
+                        <div class="si-text">
+                            <h4>Weight Loss</h4>
+                            <span><i class="fa fa-user"></i> Ryan Scott</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-class-item set-bg" data-setbg="img/classes/classes-7.jpg">
+                        <div class="si-text">
+                            <h4>Personal Training</h4>
+                            <span><i class="fa fa-user"></i> Cole Robertson</span>
+                        </div>
+                    </div>
+                    <div class="single-class-item set-bg" data-setbg="img/classes/classes-8.jpg">
+                        <div class="si-text">
+                            <h4>Weight Loss</h4>
+                            <span><i class="fa fa-user"></i> Ryan Scott</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Classes Section End -->
+
+    <!-- Trainer Section Begin -->
+<!-- SHOP WITH SHUSTHO SECTION -->
+<!-- SHOP WITH SHUSTHO SECTION -->
+<section class="shustho-shop-section spad">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h2>SHOP WITH SHUSTHO</h2>
+        </div>
+
+        <div class="shustho-shop-slider owl-carousel">
+
+            <!-- PRODUCT 1 -->
+            <div class="shustho-product-card">
+                <div class="product-image-wrapper">
+                    <img src="img/trainer/3.png" alt="Women Black">
+                </div>
+                <div class="card-body">
+                    <h5 class="product-title">Women Black</h5>
+                    <span class="product-badge">HOODIE</span>
+                    <p class="product-desc">Urban Classics CROPPED HEAVY – Sweatshirt – black</p>
+                    <div class="product-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 2 -->
+            <div class="shustho-product-card">
+                <div class="product-image-wrapper">
+                    <img src="img/trainer/4.png" alt="Unisex Pullover - Deep Blue">
+                </div>
+                <div class="card-body">
+                    <h5 class="product-title">Unisex Pullover - Deep Blue</h5>
+                    <span class="product-badge">HOODIE</span>
+                    <p class="product-desc">Oversized Fleece Long Sleeve Comfy Casual Basic Pullover</p>
+                    <div class="product-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 3 -->
+            <div class="shustho-product-card">
+                <div class="product-image-wrapper">
+                    <img src="img/trainer/5.png" alt="Women Pullover">
+                </div>
+                <div class="card-body">
+                    <h5 class="product-title">Women Pullover</h5>
+                    <span class="product-badge">HOODIE</span>
+                    <p class="product-desc">Women Hoodies Oversized Fleece Long Sleeve Comfy Casual Basic Pullover</p>
+                    <div class="product-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 4 -->
+            <div class="shustho-product-card">
+                <div class="product-image-wrapper">
+                    <img src="img/trainer/1.png" alt="Menz Black - Trendy">
+                </div>
+                <div class="card-body">
+                    <h5 class="product-title">Menz Black - Trendy</h5>
+                    <span class="product-badge">HOODIE</span>
+                    <p class="product-desc">Casual Top Pullover Hoodie</p>
+                    <div class="product-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 5 -->
+            <div class="shustho-product-card">
+                <div class="product-image-wrapper">
+                    <img src="img/trainer/2.png" alt="Menz black - Classic">
+                </div>
+                <div class="card-body">
+                    <h5 class="product-title">Menz black - Classic</h5>
+                    <span class="product-badge">HOODIE</span>
+                    <p class="product-desc">All Time Classic-American</p>
+                    <div class="product-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 6 -->
+            <div class="shustho-product-card">
+                <div class="product-image-wrapper">
+                    <img src="img/trainer/6.png" alt="Unisex Pullover - Trendy">
+                </div>
+                <div class="card-body">
+                    <h5 class="product-title">Unisex Pullover - Trendy</h5>
+                    <span class="product-badge">HOODIE</span>
+                    <p class="product-desc">Oversized Fleece Long Sleeve Comfy Casual Basic Pullover</p>
+                    <div class="product-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 7 -->
+            <div class="shustho-product-card">
+                <div class="product-image-wrapper">
+                    <img src="img/trainer/8.png" alt="Women Pullover - Comfy Short">
+                </div>
+                <div class="card-body">
+                    <h5 class="product-title">Women Pullover - Comfy Short</h5>
+                    <span class="product-badge">HOODIE</span>
+                    <p class="product-desc">Long Sleeve Comfy Casual Comfy Pullover</p>
+                    <div class="product-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    <!-- Trainer Section End -->
+
+    <!-- Testimonial Section Begin -->
+    <section class="testimonial-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>success stories</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="testimonial-slider owl-carousel">
+                        <div class="testimonial-item">
+                            <p>“ভার্সিটি পর্যন্ত সাব্বির ছিলো খুব অ্যাকটিভ, কিন্তু চাকরির প্রস্তুতি আর লকডাউনের পর ওজন দ্রুত বেড়ে যায়। শরীর ভার লাগতে শুরু করলে সে সিদ্ধান্ত নেয় বদলে যাওয়ার। Shustho’র কোচ
+                                 তার লাইফস্টাইল অনুযায়ী ডায়েট, ট্রেইনিং ও রিকভারি প্লান সেট করে দেন। মাত্র ছয় সপ্তাহেই সাব্বির ওজন কমা, স্ট্রেংথ বাড়া আর এনার্জি ফেরার মতো স্পষ্ট পরিবর্তন দেখেছে। 
+                                এখন সে অনেক বেশি ফিট, আত্মবিশ্বাসী এবং বলে যে Shustho তাকে সেই কাঙ্ক্ষিত স্বাস্থ্যই দিয়েছে, যা সে খুঁজছিল।” </p>
+                            <div class="ti-pic">
+                                <img src="img/testimonial/Sakib.jpg" alt="">
+                                <div class="quote">
+                                    <img src="img/testimonial/quote-left.png" alt="">
+                                </div>
+                            </div>
+                            <div class="ti-author">
+                                <h4>Sabbir Hossain Sakib</h4>
+                                <span>Dhaka, Bangladesh </span>
+                            </div>
+                        </div>
+                        <div class="testimonial-item">
+                            <p>Our 12-week guided health transformation program pairs you with a dedicated coach who helps you reach your fitness goals without changing your whole lifestyle.
+                                 Your coach studies your routine, finds your challenges, builds a simple diet, activity, and recovery plan,
+                                 and keeps you accountable until you reach your target. </p>
+                            <div class="ti-pic">
+                                <img src="img/testimonial/Ehteshum-ul Hoq.jpg" alt="">
+                                <div class="quote">
+                                    <img src="img/testimonial/quote-left.png" alt="">
+                                </div>
+                            </div>
+                            <div class="ti-author">
+                                <h4>Ehteshum-ul Hoq</h4>
+                                <span>Ontario, Canada</span>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-item">
+                            <p>"As Chief of Staff at ShopUp and former National President of JCI Bangladesh, my schedule is intense. Staying healthy felt out of reach, but Shustho proved otherwise. With their certified coach, I followed a simple, sustainable routine that helped me lose over 25 pounds, drop 5 inches from my waist, and move from obese to fit. My energy, strength, and sleep improved noticeably. Shustho
+                                 didn’t just guide me — they built a system I could truly follow. It’s been one of the most valuable investments in my health."</p>
+                            <div class="ti-pic">
+                                <img src="img/testimonial/Ziaul.jpg" alt="">
+                                <div class="quote">
+                                    <img src="img/testimonial/quote-left.png" alt="">
+                                </div>
+                            </div>
+                            <div class="ti-author">
+                                <h4>Ziaul Haque Bhuiyan -Chief of Staff, ShopUp</h4>
+                                <span>Dhaka, Bangladesh</span>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Section End -->
+
+    <!-- Banner Section Begin -->
+    <section class="banner-section set-bg" data-setbg="img/banner-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner-text">
+                        <h2>Get training today</h2>
+                        <p>Gimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                            industry’s standard.</p>
+                        <a href="#" class="primary-btn banner-btn">Contact Now</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <img src="img/Banner_Person.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Section End -->
+
+    <!-- Membership Section Begin -->
+<!-- Membership Section Begin -->
+<section class="membership-section spad" style="background: #f8fffe; position: relative; overflow: hidden; padding: 100px 0;">
+    <!-- Wave Background -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.12; pointer-events: none; z-index: 0;">
+      <svg viewBox="0 0 1440 320" preserveAspectRatio="none" style="width: 100%; height: 100%;">
+        <path fill="#00a9a4" d="M0,160L48,176C96,192,192,224,288,224C384,224,480,192,576,160C672,128,768,96,864,112C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L0,320Z"></path>
+      </svg>
+    </div>
+  
+    <div class="container position-relative" style="z-index: 1;">
+      <!-- Title - ONE LINE -->
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="fw-bold text-dark d-inline-block" style="font-size: 2.4rem; letter-spacing: 1.2px; text-transform: uppercase; font-family: 'Poppins', sans-serif; line-height: 1.2; white-space: nowrap;">
+            90 DAYS FITNESS TRANSFORMATION PROGRAM
+          </h2>
+        </div>
+      </div>
+  
+      <!-- Plans Grid -->
+      <div class="row g-4 g-xl-5 justify-content-center">
+  
+        <!-- ONLINE -->
+        <div class="col-lg-4 col-md-6">
+          <div class="plan-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column" style="border: 1px solid #e0f7f5; min-height: 540px;">
+            <!-- Badge -->
+            <div class="d-flex justify-content-center mb-4">
+              <div class="plan-badge bg-success text-white px-5 py-2 rounded-pill fw-bold text-center" style="font-size: 1rem; min-width: 140px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                ONLINE
+              </div>
+            </div>
+  
+            <!-- Price -->
+            <div class="price-box bg-white border border-3 border-success rounded-4 p-4 mb-4 text-center">
+              <h3 class="price fw-bold mb-1 d-flex align-items-center justify-content-center gap-1" style="font-size: 2.6rem; color: #00a9a4; line-height: 1; white-space: nowrap;">
+                <span style="font-size: 2.2rem;">৳</span>30,000
+              </h3>
+              <p class="text-muted small mb-0 fw-medium">single upfront payment</p>
+            </div>
+  
+            <!-- Features with New Vivid Modern Ticks -->
+            <ul class="list-unstyled flex-grow-1 mb-4" style="font-size: .8rem; line-height: 2; color: #2c3e50;">
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Lifestyle Assessment & Goal Setting</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Personalized Diet, Training & Recovery Plans</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Data Tracking through Shared Journal</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Expert Guidance from a Dedicated Fitness Coach</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Weekly Evaluation Meeting (Online)</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Exclusive Access to a Like-Minded Community</span>
+              </li>
+            </ul>
+  
+            <!-- Button -->
+            <a href="tel:+8801973408659" class="btn btn-teal w-100 py-3 rounded-pill text-white fw-bold mt-auto shadow-sm"
+               style="background: #008c8a; border: none; font-size: 1.1rem; transition: all 0.3s;">
+              Book Now
+            </a>
+          </div>
+        </div>
+  
+        <!-- HYBRID -->
+        <div class="col-lg-4 col-md-6">
+          <div class="plan-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column" style="border: 1px solid #e0f7f5; min-height: 540px;">
+            <div class="d-flex justify-content-center mb-4">
+              <div class="plan-badge bg-warning text-dark px-5 py-2 rounded-pill fw-bold text-center" style="font-size: 1rem; min-width: 280px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                HYBRID (online + offline)
+              </div>
+            </div>
+  
+            <div class="price-box bg-white border border-3 border-warning rounded-4 p-4 mb-4 text-center">
+              <h3 class="price fw-bold mb-1 d-flex align-items-center justify-content-center gap-1" style="font-size: 2.6rem; color: #00a9a4; line-height: 1; white-space: nowrap;">
+                <span style="font-size: 2.2rem;">৳</span>60,000
+              </h3>
+              <p class="text-muted small mb-0 fw-medium">single upfront payment</p>
+            </div>
+  
+            <ul class="list-unstyled flex-grow-1 mb-4" style="font-size: .8rem; line-height: 2; color: #2c3e50;">
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Lifestyle Assessment & Goal Setting</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Personalized Diet, Training & Recovery Plans</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Weekly one 1-on-1 Offline Training Session with the Coach</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Remaining Sessions & Guidance Provided Online</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Data Tracking through Shared Journal</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Weekly Evaluation Meeting (Hybrid: Online/Offline)</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Exclusive Access to a Like-Minded Community</span>
+              </li>
+            </ul>
+  
+            <a href="tel:+8801973408659" class="btn btn-teal w-100 py-3 rounded-pill text-white fw-bold mt-auto shadow-sm"
+               style="background: #008c8a; border: none; font-size: 1.1rem; transition: all 0.3s;">
+              Book Now
+            </a>
+          </div>
+        </div>
+  
+        <!-- OFFLINE -->
+        <div class="col-lg-4 col-md-6">
+          <div class="plan-card bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column" style="border: 1px solid #e0f7f5; min-height: 540px;">
+            <div class="d-flex justify-content-center mb-4">
+              <div class="plan-badge bg-danger text-white px-5 py-2 rounded-pill fw-bold text-center" style="font-size: 1rem; min-width: 320px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                Total Offline
+              </div>
+            </div>
+  
+            <div class="price-box bg-white border border-3 border-danger rounded-4 p-4 mb-4 text-center">
+              <h3 class="price fw-bold mb-1 d-flex align-items-center justify-content-center gap-1" style="font-size: 2.6rem; color: #00a9a4; line-height: 1; white-space: nowrap;">
+                <span style="font-size: 2.2rem;">৳</span>180,000
+              </h3>
+              <p class="text-muted small mb-0 fw-medium">single upfront payment</p>
+            </div>
+  
+            <ul class="list-unstyled flex-grow-1 mb-4" style="font-size: .8rem; line-height: 2; color: #2c3e50;">
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Lifestyle Assessment & Goal Setting</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Fully Personalized Diet, Training & Recovery Plans</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Weekly three 1-on-1 In-Person Training Sessions for 90 days</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Continuous Data Tracking & Progress Updates</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Hands-On Expert Guidance from a Dedicated Fitness Coach</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Weekly In-Person Evaluation & Feedback Session</span>
+              </li>
+              <li class="mb-2 d-flex align-items-start gap-2">
+                <span class="flex-shrink-0" style="margin-top: 0.15em;">
+                  <svg viewBox="0 0 512 512" fill="#10b981" xmlns="http://www.w3.org/2000/svg" style="width: 1.3em; height: 1.3em;">
+                    <path d="M173.898 439.404l-16.686-16.687c-12.314-12.315-12.315-32.319 0-44.633L335.458 256l-178.646-178.084c-12.315-12.315-12.315-32.319 0-44.634l16.686-16.687c12.314-12.314 32.319-12.314 44.633 0L438.804 215.58c12.315 12.315 12.315 32.319 0 44.633L218.531 443.404c-12.314 12.315-32.319 12.315-44.633 0z"/>
+                  </svg>
+                </span>
+                <span>Exclusive Access to a Like-Minded Community</span>
+              </li>
+            </ul>
+  
+            <a href="tel:+8801973408659" class="btn btn-teal w-100 py-3 rounded-pill text-white fw-bold mt-auto shadow-sm"
+               style="background: #008c8a; border: none; font-size: 1.1rem; transition: all 0.3s;">
+              Book Now
+            </a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- CTA Footer -->
+      <div class="row mt-5">
+        <div class="col-12 text-center">
+          <p class="mb-0 fw-semibold">
+            <span class="text-danger">Spot Limited</span> —
+            Call <a href="tel:+8801973408659" class="text-teal fw-bold">+8801973408659</a> or
+            email <a href="mailto:shusthotechnologies@gmail.com" class="text-teal">shusthotechnologies@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- Membership Section End -->
+
+   
+  <!-- Corporate Wellness section Begin -->
+<section class="get-training-section">
+    <div class="get-training-overlay"></div>
+    <div class="container">
+        <div class="get-training-content">
+            <div class="get-training-text">
+                <h1>Corporate Wellness</h1>
+                <p>Join and start your transformation now.</p>
+                <a href="contact.html" class="primary-btn">Get Register</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Corporate Wellness section  End -->
+
+
+<!-- Latest Blog Section Begin -->
+<section class="latest-blog-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>Latest Blog</h2>
+                </div>
+            </div>
+        </div>
+        <div class="blog-slider owl-carousel">
+            <!-- Card 1 -->
+            <div class="single-blog-item">
+                <img src="img/blog/sugar.jpg" alt="">
+                <div class="blog-widget">
+                    <div class="bw-date">February 17, 2019</div>
+                    <a href="#" class="tag">#Health</a>
+                </div>
+                <h4><a href="#">Say no to sugar.</a></h4>
+            </div>
+            <!-- Card 2 -->
+            <div class="single-blog-item">
+                <img src="img/blog/banana.jpg" alt="">
+                <div class="blog-widget">
+                    <div class="bw-date">March 15, 2020</div>
+                    <a href="#" class="tag">#Nutrition</a>
+                </div>
+                <h4><a href="#">What's your favorite banana—raw, ripe, or overripe?</a></h4>
+            </div>
+            <!-- Card 3 -->
+            <div class="single-blog-item">
+                <img src="img/blog/hydration.jpg" alt="">
+                <div class="blog-widget">
+                    <div class="bw-date">April 1, 2020</div>
+                    <a href="#" class="tag">#Body</a>
+                </div>
+                <h4><a href="#">Don’t skip your water today. It matters.</a></h4>
+            </div>
+            <!-- Add more cards here (example duplicates as placeholders) -->
+            <!-- Card 4 (Duplicate placeholder - replace with new content) -->
+            <div class="single-blog-item">
+                <img src="img/blog/guava.jpg" alt="">
+                <div class="blog-widget">
+                    <div class="bw-date">August 1, 2020</div>
+                    <a href="#" class="tag">#Health</a>
+                </div>
+                <h4><a href="#">Guava fuels your immunity.</a></h4>
+            </div>
+            <!-- Card 5 (Duplicate placeholder - replace with new content) -->
+            <div class="single-blog-item">
+                <img src="img/blog/digestion.jpg" alt="">
+                <div class="blog-widget">
+                    <div class="bw-date">January 03, 2021</div>
+                    <a href="#" class="tag">#Health</a>
+                </div>
+                <h4><a href="#">Strong digestion starts with small habits</a></h4>
+            </div>
+            <!-- Card 6 (Duplicate placeholder - replace with new content) -->
+            <div class="single-blog-item">
+                <img src="img/blog/chicken.jpg" alt="">
+                <div class="blog-widget">
+                    <div class="bw-date">May 2, 2021</div>
+                    <a href="#" class="tag">#Nutrition</a>
+                </div>
+                <h4><a href="#">High protein, low fat—easy on the body</a></h4>
+            </div>
+
+            <!-- Card 7 (Duplicate placeholder - replace with new content) -->
+            <div class="single-blog-item">
+                <img src="img/blog/sleep.jpg" alt="">
+                <div class="blog-widget">
+                    <div class="bw-date">July 17, 2021</div>
+                    <a href="#" class="tag">#Nutrition</a>
+                </div>
+                <h4><a href="#">Quality sleep restores your entire system</a></h4>
+            </div>
+
+            <!-- Card 8 (Duplicate placeholder - replace with new content) -->
+            <div class="single-blog-item">
+                <img src="img/blog/horomne.jpg" alt="">
+                <div class="blog-widget">
+                    <div class="bw-date">April 1, 2022</div>
+                    <a href="#" class="tag">#Hormone</a>
+                </div>
+                <h4><a href="#">Strong, steady—like well-balanced testosterone</a></h4>
+            </div>
+
+            <!-- Card 9 (Duplicate placeholder - replace with new content) -->
+            <div class="single-blog-item">
+                <img src="img/blog/potato.jpg" alt="">
+                <div class="blog-widget">
+                    <div class="bw-date">Octobar 1, 2025</div>
+                    <a href="#" class="tag">#Food</a>
+                </div>
+                <h4><a href="#">Calories change, the potato doesn’t.</a></h4>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Latest Blog Section End -->
+
+
+    <!-- CARD SLIDER SECTION - LEFT IMAGE, RIGHT TEXT (FINAL WORKING) -->
+    <section class="shustho-slider-section">
+        <div class="slider-container">
+            
+            <!-- Slide 1 -->
+            <div class="shustho-card active">
+                <div class="shustho-card-img" style="background-image: url('img/d-food.png');"></div>
+                <div class="shustho-card-content">
+                    <p class="shustho-card-theme">DIABETES AWARENESS</p>
+                    <h2 class="shustho-card-title">Your Second Chance</h2>
+                    <p class="shustho-card-text">58% of prediabetes cases can return to normal blood sugar with lifestyle changes alone — no medicine needed.</p>
+                    <a href="diabetes.html" class="shustho-card-link">Read more</a>
+                </div>
+            </div>
+    
+            <!-- Slide 2 -->
+            <div class="shustho-card">
+                <div class="shustho-card-img" style="background-image: url('img/slider/fe_1.jpg');"></div>
+                <div class="shustho-card-content">
+                    <p class="shustho-card-theme">CORPORATE WELLNESS</p>
+                    <h2 class="shustho-card-title">Boost your metabolism in <br>5 ways</h2>
+                    <p class="shustho-card-text">Metabolic health for high-achieving professionals— leading organizations choose Shustho for employee fitness.</p>
+                    <a href="https://thefinancialexpress.com.bd/youth-and-entrepreneurship/metabolic-health-for-high-achieving-professionals" class="shustho-card-link">Read more</a>
+                </div>
+            </div>
+    
+            <!-- Slide 3 -->
+            <div class="shustho-card">
+                <div class="shustho-card-img" style="background-image: url('img/slider/fe_02.jpg');"></div>
+                <div class="shustho-card-content">
+                    <p class="shustho-card-theme">FITNESS COACHING</p>
+                    <h2 class="shustho-card-title">Fitness is the<br> key</h2>
+                    <p class="shustho-card-text">-How to stay fit during Eid holidays, Train with Bangladesh’s top fitness professionals who deliver real results.</p>
+                    <a href="https://thefinancialexpress.com.bd/youth-and-entrepreneurship/how-to-stay-fit-during-eid-holidays" class="shustho-card-link">Read more</a>
+                </div>
+            </div>
+    
+            <!-- Navigation -->
+            <div class="slider-nav">
+                <button id="slider-prev">↑</button>
+                <button id="slider-next">↓</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Corporate Wellness Partners Section Begin -->
+<section class="partners-section spad" style="padding-top:30px;>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title text-center">
+                    <h2>Corporate Wellness Partners</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-9">
+                <div class="partners-logo-grid">
+                    <!-- Row 1 -->
+                    <div class="partner-row">
+                        <img src="img/partners/ucb.png" alt="UCB Stock Brokerage Limited">
+                        <img src="img/partners/basis.jpeg" alt="BASIS">
+                        <img src="img/partners/gph.jpeg" alt="DPH Ispat">
+                        <img src="img/partners/grey.png" alt="GREY">
+                        <img src="img/partners/medeasy.jpg" alt="GREY">
+                        
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="partner-row">
+                        <img src="img/partners/medimate.png" alt="mediMate">
+                        <img src="img/partners/moore.jpeg" alt="Daraz">
+                        <img src="img/partners/WPDeveloper-Logo.png" alt="WPDeveloper">
+                        <img src="img/partners/ar-com-1.png" alt="C.com">
+                        <img src="img/partners/concito.png" alt="Concrito">
+                        <img src="img/partners/blintollc_logo.jpeg" alt="Concrito">
+
+                    </div>
+                    <!-- Row 3 -->
+                    <div class="partner-row">
+                        <img src="img/partners/10m.png" alt="10 Minute School">
+                        <img src="img/partners/jci_dd.png" alt="JCI Dhaka Diplomats">
+                        <img src="img/partners/lte.png" alt="LITE">
+                        <img src="img/partners/jci_da.png" alt="JCI Dhaka Achievers">
+                        <img src="img/partners/a_network.jpeg" alt="Attention Network">
+                        <img src="img/partners/aaa.jpg" alt="Concrito">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Corporate Wellness Partners Section End -->
+
+
+
+
+
+
+    <!-- Footer Banner Section Begin -->
+    <section class="footer-banner">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="footer-banner-item set-bg" data-setbg="img/footer-banner/footer-banner-1.jpg">
+                        <span>New member</span>
+                        <h2>7 days for free</h2>
+                        <p>Complete the training sessions with us, surely you will be happy</p>
+                        <a href="#" class="primary-btn">Get Started</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer-banner-item set-bg" data-setbg="img/footer-banner/footer-banner-2.jpg">
+                        <span>contact us</span>
+                        <h2>+880 1673 408659</h2>
+                        <p>If you trust us on your journey they dark sex does not disappoint you!</p>
+                        <a href="#" class="primary-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Banner Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Phone</span>
+                        <p>+880 1673 408659</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Address</span>
+                        <p>MIRPUR DOHS, DHAKA, 1216</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-option">
+                        <span>Email</span>
+                        <p>mukit@Shustho.life</p>
+                    </div>
+                </div>
+            </div>
+            <div class="subscribe-option set-bg" data-setbg="img/footer-signup.jpg">
+                <div class="so-text">
+                    <h4>Subscribe To Our Mailing List</h4>
+                    <p>Sign up to receive the latest information </p>
+                </div>
+                <form action="#" class="subscribe-form">
+                    <input type="text" placeholder="Enter Your Mail">
+                    <button type="submit"><i class="fa fa-send"></i></button>
+                </form>
+            </div>
+            <div class="copyright-text">
+                <ul>
+                    <li><a href="#">Term&Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+                <p>&copy;<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <a href="https://koushikl0l.github.io" target="_blank">koushikl0l</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></p>
+                <div class="footer-social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

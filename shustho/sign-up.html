@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Shustho - Login & Signup</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body {
+  height: 100vh;
+  background: #00A9A4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 980px;
+  height: 94vh;
+  max-height: 660px;
+  background: white;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.image-side {
+  flex: 1;
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+              url('img/sign_up.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 32px;
+  color: white;
+}
+
+.image-content h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.image-content p {
+  font-size: 15px;
+  line-height: 1.4;
+  opacity: 0.95;
+}
+
+.form-side {
+  flex: 1;
+  background: #fff;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.toggle-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.toggle-container {
+  background: #f0f0f0;
+  border-radius: 50px;
+  padding: 5px;
+  width: 190px;
+  display: flex;
+  position: relative;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.toggle-pill {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 88px;
+  height: 36px;
+  background: #00A9A4;
+  border-radius: 50px;
+  transition: transform 0.35s ease;
+  box-shadow: 0 3px 10px rgba(0,169,164,0.4);
+}
+
+.toggle-option {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  font-weight: 600;
+  font-size: 14px;
+  color: #666;
+  z-index: 2;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-option.active { color: white; }
+
+h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: #777;
+  font-size: 13.5px;
+  margin-bottom: 18px;
+}
+
+.input-field {
+  margin-bottom: 14px;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  font-size: 14px;
+  background: #f8f9ff;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-field input:focus {
+  border-color: #00A9A4;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(0,169,164,0.15);
+}
+
+.btn {
+  width: 100%;
+  padding: 13px;
+  background: #00A9A4;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 6px;
+}
+
+.btn:hover {
+  background: #008b86;
+  transform: translateY(-2px);
+}
+
+.social-text {
+  text-align: center;
+  color: #888;
+  margin: 20px 0 12px;
+  font-size: 13px;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #777;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-btn:hover {
+  background: #00A9A4;
+  color: white;
+  transform: scale(1.1);
+}
+
+#login-form { display: block; }
+#signup-form { display: none; }
+
+@media (max-width: 768px) {
+  .container { 
+    flex-direction: column; 
+    height: 96vh; 
+    max-height: 720px;
+  }
+  .image-side { height: 240px; padding: 28px; }
+  .image-content h1 { font-size: 34px; }
+  .form-side { padding: 25px 20px; gap: 12px; }
+  .toggle-wrapper { justify-content: center; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="image-side">
+    <div class="image-content">
+      <h1 style="color:#00A9A4">SHUSTHO</h1>
+      <p>Reach new heights.<br>Join the community of Fitness.</p>
+    </div>
+  </div>
+
+  <div class="form-side">
+    <div class="toggle-wrapper">
+      <div class="toggle-container">
+        <div class="toggle-pill" id="pill"></div>
+        <div class="toggle-option active" id="signin-tab" onclick="showLogin()">Sign In</div>
+        <div class="toggle-option" id="signup-tab" onclick="showSignup()">Sign Up</div>
+      </div>
+    </div>
+
+    <div id="login-form">
+      <h2>Welcome Back!</h2>
+      <p class="subtitle">Log in to continue your journey</p>
+      <form>
+        <div class="input-field"><input type="email" placeholder="Email" required /></div>
+        <div class="input-field"><input type="password" placeholder="Password" required /></div>
+        <button type="submit" class="btn">Login Now</button>
+      </form>
+    </div>
+
+    <div id="signup-form">
+      <h2>Create Account</h2>
+      <p class="subtitle">Join us and start jumping higher</p>
+      <form>
+        <div class="input-field"><input type="text" placeholder="Username" required /></div>
+        <div class="input-field"><input type="email" placeholder="Email" required /></div>
+        <div class="input-field"><input type="password" placeholder="Password" required /></div>
+        <div class="input-field"><input type="password" placeholder="Confirm Password" required /></div>
+        <button type="submit" class="btn">Register</button>
+      </form>
+    </div>
+
+    <div class="social-text">Or continue with</div>
+    <div class="social-buttons">
+      <div class="social-btn">G</div>
+      <div class="social-btn">f</div>
+      <div class="social-btn">X</div>
+    </div>
+  </div>
+</div>
+
+<script>
+function showLogin() {
+  document.getElementById('login-form').style.display = 'block';
+  document.getElementById('signup-form').style.display = 'none';
+  document.getElementById('pill').style.transform = 'translateX(0)';
+  document.getElementById('signin-tab').classList.add('active');
+  document.getElementById('signup-tab').classList.remove('active');
+}
+function showSignup() {
+  document.getElementById('login-form').style.display = 'none';
+  document.getElementById('signup-form').style.display = 'block';
+  document.getElementById('pill').style.transform = 'translateX(100%)';
+  document.getElementById('signin-tab').classList.remove('active');
+  document.getElementById('signup-tab').classList.add('active');
+}
+</script>
+</body>
+</html>

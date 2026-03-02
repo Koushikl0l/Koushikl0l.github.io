@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MADA - Diagnostic AI in Bangladesh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        img {
+            width: 100%;
+            max-width: 1000px;
+            display: block;
+            margin: 20px auto;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* New image box styles */
+        .image-box {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            border: 3px solid #ddd;
+            border-radius: 16px;
+            background-color: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin: 40px auto;
+            justify-content: center;
+            object-fit: contain;
+            flex-wrap: wrap;
+        }
+        .caption {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  user-select: none;
+  text-align: center;  /* explicitly center text */
+}
+
+
+        .image-box a {
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-box a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3);
+        }
+
+        .image-box img {
+            width: 210px;
+            height: 256px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #ccc;
+            object-fit: contain;
+            transition: border-color 0.3s;
+        }
+
+        .image-box a:hover img {
+            border-color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Multi-modal AI Diagnostic Assistant (MADA)</h1>
+
+        <p>
+            Misdiagnosis and medical negligence are persistent and serious challenges in Bangladesh’s healthcare system.
+            A mixed-methods survey of students and healthcare users recently revealed that <strong>43.5%</strong> of respondents had personally experienced misdiagnosis, 
+            with <strong>72.7%</strong> believing AI could significantly reduce these errors 
+            (<a href="https://qualitysafety.bmj.com">qualitysafety.bmj.com</a>, <a href="https://researchgate.net">researchgate.net</a>, <a href="https://unb.com.bd">unb.com.bd</a>).
+        </p>
+
+        <p>
+            Investigative journalism highlights the tragic consequences of diagnostic lapses—most notably in stroke care—
+            where a four-day delay in treatment frequently leads to irreversible brain damage, long-term disability, or death 
+            (<a href="https://unb.com.bd">unb.com.bd</a>). A 2013 compilation reported 27 deaths and 2 cases of permanent disability in just 29 instances of wrong treatment or negligence,
+            often triggering social unrest directed at healthcare workers 
+            (<a href="https://ubinig.org">ubinig.org</a>, <a href="https://unb.com.bd">unb.com.bd</a>).
+        </p>
+
+        <p>
+            These events occur within a broader institutional context marked by limited infrastructure, workforce shortages, and inadequate patient disclosure norms under the current ethical framework 
+            (<a href="https://researchgate.net">researchgate.net</a>, <a href="https://bmcmedethics.biomedcentral.com">bmcmedethics.biomedcentral.com</a>, <a href="https://journals.library.columbia.edu">journals.library.columbia.edu</a>).
+            The implications extend beyond clinical outcomes: misdiagnoses damage public trust, trigger financial stress, and exacerbate stigma—particularly in mental health, 
+            where incorrect treatments for conditions like depression may worsen patient safety 
+            (<a href="https://pmc.ncbi.nlm.nih.gov">pmc.ncbi.nlm.nih.gov</a>, <a href="https://pubmed.ncbi.nlm.nih.gov">pubmed.ncbi.nlm.nih.gov</a>).
+        </p>
+
+        <p>
+            Against this backdrop, our proposed multimodal AI diagnostic framework offers a powerful tool to address both the scale and gravity of diagnostic errors.
+            By integrating imaging, EHR data, genomics, lab results, and audio signals, the system aims to mimic clinicians’ holistic reasoning with enhanced precision. 
+            Leveraging explainable AI and clinician feedback, our approach not only targets improved accuracy—potentially reducing diagnostic delays like those observed in stroke cases—
+            but also seeks to rebuild public confidence and improve ethical standards in care delivery.
+        </p>
+
+       
+
+        <img src="Blank diagram.jpeg" alt="Multi-modal AI Diagnostic Assistant Diagram">
+
+        <h4><b>Abstract:</b></h4>
+        <p>
+            This paper proposes a novel multimodal AI-based diagnostic system that integrates diverse healthcare data types—medical imaging, clinical text, genomic information,
+            audio samples, and structured vitals—to outperform traditional diagnostic pipelines. By fusing heterogeneous data sources via modality-specific encoders and an attention-based
+            fusion module, the proposed system achieves improved diagnostic accuracy and robustness. We introduce a training architecture supported by mathematical formulations and reference
+            state-of-the-art techniques in multimodal learning and healthcare AI. This approach aims not only to improve individual diagnostic outcomes but also to serve as a foundational 
+            infrastructure for AI-powered hospital systems.</p>
+        
+        <h3><b>Introduction:</b></h3>
+        <p>  
+            Medical diagnostics is an inherently complex process involving various data sources and interpretations. Despite advancements in computer-aided diagnostics (CAD), current tools often 
+            rely on unimodal inputs such as radiology images or tabular electronic health records (EHRs). This limitation creates diagnostic blind spots. Motivated by recent breakthroughs in multimodal AI,
+             we propose a pipeline that integrates five complementary data types to enhance disease detection performance. Our work envisions a holistic AI framework that combines structured and unstructured
+              data in real time, mimicking the reasoning style of experienced clinicians while offering scale, consistency, and speed.</p>
+        
+        <h3><b>Related Work:</b></h3>
+        <p>
+            Previous work such as ClinicalBERT [Alsentzer et al., 2019] and HEALNet [Nguyen et al., 2021] laid the foundation for healthcare-specific natural language and multimodal processing. 
+            Similarly, Pathomic Fusion and multimodal transformers [Tsai et al., 2019] inspired our attention-based architecture. Genomic modeling using DNABERT [Ji et al., 2021] and acoustic health 
+            diagnostics [Orlandic et al., 2021] further expand the scope of AI in patient evaluation. We extend these models by incorporating genomics and audio modalities and focusing on real-time, 
+            adaptive learning through clinician feedback, while integrating domain knowledge and ethical oversight into system design.
+        </p>
+        <h4><b>Use Case</b></h4>
+         <!-- Image box begins -->
+         <div class="image-box">
+            <a href="https://koushikl0l.github.io/ecg.html" target="_blank">
+                <img src="ecg.jpg" alt="Image 1">
+                <div class="caption">ECG</div>
+            </a>
+            <a href="https://example.com/2" target="_blank">
+                <img src="chest.png" alt="Image 2">
+                <div class="caption">X-RAY analysis</div>
+            </a>
+            <a href="https://example.com/3" target="_blank">
+                <img src="caugh.png" alt="Image 3">
+                <div class="caption">cough/breathing</div>
+            </a>
+            <a href="https://example.com/4" target="_blank">
+                <img src="dna.jpg" alt="Image 4">
+                <div class="caption">Genomics</div>
+            </a>
+        </div>
+        <!-- Image box ends -->
+    </div>
+</body>
+</html>

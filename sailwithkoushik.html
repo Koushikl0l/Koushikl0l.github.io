@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Daily Life Timeline</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { 
+    font-family: 'Roboto', sans-serif; 
+    color: #333; 
+    overflow-x: hidden; 
+    position: relative;
+    background: #f4f4f9;
+  }
+
+  /* Full-page background image with low opacity */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('life/taj.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 1;
+    z-index: -1;
+  }
+
+  /* Navigation Bar */
+  nav {
+    display:flex; justify-content:center; align-items:center;
+    height:80px;
+    background: url('life/navbar.png') center center no-repeat;
+    background-size: cover;
+    padding:0 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position:sticky; top:0; z-index:1000;
+  }
+
+  nav a {
+    color:white; text-decoration:none; font-weight:bold;
+    margin:0 15px; padding:10px 20px; border-radius:8px;
+    font-size:18px; transition: background 0.3s, transform 0.3s;
+    text-shadow:0 1px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+  }
+  nav a:hover { background: rgba(255,255,255,0.2); transform:translateY(-2px); }
+
+  /* Profile Image */
+  .profile { display:flex; justify-content:center; margin:2rem 0 3rem; }
+  .profile img {
+    width:120px; height:120px; border-radius:50%; border:4px solid #2575fc;
+    object-fit:cover; box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+  .profile img:hover { transform: scale(1.05); }
+
+  main { max-width:900px; margin:0 auto 2rem; padding:0 1rem; }
+
+  /* Timeline */
+  .timeline { position:relative; margin:2rem 0; }
+  .timeline::before {
+    content:''; 
+    position:absolute; 
+    top:0; 
+    bottom:0; 
+    left:50%;
+    width:4px; 
+    background:white;
+    border-radius:2px; 
+    transform:translateX(-50%);
+  }
+
+  .day { position:relative; width:100%; margin:2rem 0; display:flex; flex-wrap:wrap; justify-content:flex-start; }
+  .day-content {
+    width:100%; padding:1rem 2rem; background:rgba(255,255,255,0.95);
+    border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s; display:flex; flex-direction:column; align-items:flex-start;
+  }
+  .day-content:hover { transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,0.15); }
+
+  .day.left .day-content { margin-left:auto; max-width:45%; }
+  .day.right .day-content { margin-right:auto; max-width:45%; }
+
+  .day::before {
+    content:''; position:absolute; top:1rem; width:20px; height:20px;
+    background:white; border-radius:50%; border:3px solid white;
+    left:50%; transform:translateX(-50%);
+  }
+
+  .day img { width:100%; border-radius:10px; margin-bottom:1rem; object-fit:cover; max-height:300px; }
+  .date { font-weight:bold; color:#2575fc; margin-bottom:0.5rem; }
+  .experience { margin-bottom:1rem; line-height:1.6; }
+  .music-player audio { width:100%; outline:none; border-radius:8px; }
+
+  /* Artistic life note */
+  .life-note {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 4px - 320px);
+    width: 320px;
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 15px 5px 20px 10px; 
+    box-shadow: 8px 12px 20px rgba(0,0,0,0.25);
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000;
+    transform: rotate(-6deg); 
+    font-family: 'Caveat', cursive; 
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    z-index: 1;
+  }
+
+  /* Zoom effect when Life button is clicked */
+  .life-note.zoomed {
+    transform: rotate(-6deg) scale(1.3);
+    z-index: 2000;
+    box-shadow: 12px 18px 30px rgba(0,0,0,0.35);
+  }
+
+  @media(max-width:768px){
+    .day-content, .day.left .day-content, .day.right .day-content { max-width:100%; margin:0 auto; }
+    .timeline::before{ left:20px; }
+    .day::before{ left:20px; }
+    .life-note { position: static; width: 100%; margin-bottom: 1rem; left: 0; transform: rotate(0deg); border-radius:10px; }
+    nav{ flex-wrap:wrap; padding:1rem; }
+    nav a{ margin:0.5rem; }
+  }
+
+  footer{ text-align:center; padding:2rem 1rem; background:#333; color:white; margin-top:4rem; }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <a href="#life">Life</a>
+  <a href="#moments">Moments</a>
+  <a href="#roadmap">Roadmap</a>
+</nav>
+
+<!-- Profile -->
+<div class="profile">
+  <img src="life/3.jpg" alt="Profile Image">
+</div>
+
+<main>
+  <div class="timeline">
+    <!-- First Day with Life Note -->
+    <div class="day left" id="life">
+      <div class="life-note">
+        Some people die at 25, burdened by family pressure, career, marriage, life goals, competition, and workload—all together is life. Sometimes people feel alone even when they have everything, unable to share their thoughts or find a shoulder to cry on.
+
+        <br><br>The beauty of life is that at least I have a family and a good circle of friends to embrace me. I am thankful for this life. God is complicated to understand in some situations, yet sharing these moments makes life worthy.
+      </div>
+
+      <div class="day-content">
+       
+        <img src="life/1.jpg" alt="Lily Flower Sunset">
+        <div class="date">Evening, Before Sunset</div>
+        <div class="experience">
+          A delicate lily captured during a serene evening walk in our community. The golden sunset bathed the petals in warm light, and walking with my best friend, we paused to admire this fleeting beauty.
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Day -->
+    <div class="day right" id="moments">
+      <div class="day-content">
+        <img src="life/2.jpg" alt="Community Rooftop Evening">
+        <div class="date">Evening, City Lights</div>
+        <div class="experience">
+          From our rooftop, the fading sun kissed the lake while city lights sparkled below. Car headlights traced the roads, and the lake mirrored the bustling city life—a moment of quiet awe amidst the urban rhythm.
+        </div>
+      </div>
+    </div>
+
+    <!-- Third Day -->
+    <div class="day left">
+      <div class="day-content">
+        <img src="life/4.JPEG" alt="Bengali River Morning">
+        <div class="date">Morning Walk, 2019</div>
+        <div class="experience">
+          Beside the tranquil Bengali River, source of Tista River, I walked barefoot along the riverside. The morning breeze and gentle ripples of the river left a serene imprint on my heart.
+        </div>
+      </div>
+    </div>
+
+    <!-- Fourth Day -->
+    <div class="day right">
+      <div class="day-content">
+        <img src="life/5.jpg" alt="Infosys Mysuru Building">
+        <div class="date">September 2019</div>
+        <div class="experience">
+          Captured at Infosys Mysuru headquarters, a golden chapter of my life. The building, reminiscent of British Parliament architecture, witnessed countless memories and inspiring moments shared with friends.
+        </div>
+      </div>
+    </div>
+
+   <!-- SixthDay -->
+    <div class="day left">
+      <div class="day-content">
+        <img src="life/6.jpg" alt="Boat Trip with Friends">
+        <div class="date">Boat Trip, Narayanganj</div>
+        <div class="experience">
+          A joyous boat trip with friends, feasting on hilsha fish, mashed potatoes, dal, and more. Laughter echoed across the lake, the moments etched into my heart like gentle ripples on the water.
+        </div>
+      </div>
+    </div>
+
+    <!-- Fifth Day -->
+    <div class="day right">
+      <div class="day-content">
+        <img src="life/lake.jpg" alt="Infosys Mysuru Building">
+        <div class="date">Kaptai Lake, Chittagong</div>
+        <div class="experience">
+          Oh man, that kayak trip on Kaptai Lake with Mukit was something else. It was supposed to be a chill afternoon, but then the sky just opened up and it started pouring. The lake got super choppy and a little scary, honestly. We somehow made it back before dark, and it was pretty cool to see the local folks and how they live off the lake, fishing for a living. And yeah, trying to learn to kayak in that storm with Mukit—definitely an unforgettable adventure with one of my best friends.
+        </div>
+      </div>
+    </div>
+
+   
+
+   <!-- SeventhDay -->
+    <div class="day left">
+      <div class="day-content">
+        <img src="life/Kaptai_.jpg" alt="Boat Trip with Friends">
+        <div class="date">Trip to BilaiChori</div>
+        <div class="experience">
+          That boat trip to Muppochora with a group of strangers turned into an unforgettable adventure. A highlight was our friend hilariously asking some soldiers for salt by calling them "army vaiya," a moment that had us all in stitches. We enjoyed hill climbing, tried some delicious local fish, and even found shelter from the rain with a kind family. The trip was a perfect mix of laughter, new friends, and amazing local hospitality.
+        </div>
+      </div>
+    </div>
+    <!-- Day Eight -->
+    <div class="day right">
+      <div class="day-content">
+        <img src="life/Sylhet_0_point.jpg" alt="Boat Trip with Friends">
+        <div class="date">Trip to Sylhet-Unforgetable</div>
+        <div class="experience">
+          Our trip to Sylhet was an adventure of old friends, new faces, and unexpected turns. My friends Sharif and Pranto and I met up with friends at SUST, where Sharif gave us a tour of his old campus and reminisced about his student days. Things got a little chaotic when our group suddenly split up to meet with other friends, causing a bit of tension between Sharif and Pranto. But we worked it out, and later that night, we met up with some of Pranto's colleagues for a great dinner. We spent the next day exploring a tea estate, visiting Zero Point, and eating at the famous local restaurant, Panshi. Despite the unplanned chaos, it was a memorable trip filled with laughter and great food.
+        </div>
+      </div>
+    </div>
+
+   
+   
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 Koushik Ahmed Kushal | My Daily Life
+</footer>
+
+<script>
+  // Zoom life note on clicking Life button
+  document.querySelector('nav a[href="#life"]').addEventListener('click', function(e){
+      e.preventDefault(); // prevent default jump
+      const note = document.querySelector('.life-note');
+
+      // Smooth scroll to note
+      note.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      // Add zoom class temporarily
+      note.classList.add('zoomed');
+
+      // Remove zoom after 2 seconds
+      setTimeout(() => {
+          note.classList.remove('zoomed');
+      }, 2000);
+  });
+</script>
+
+</body>
+</html>
