@@ -64,7 +64,10 @@ This project is built with:
 
 This project is set up to deploy to **GitHub Pages** and replace your previous github.io site.
 
+**If the live site shows a white page:** In **Settings → Pages**, set **Source** to **GitHub Actions** (not "Deploy from a branch"). The branch source serves raw source files, so the app script 404s and nothing renders.
+
 1. **Enable GitHub Pages**  
+   (Source must be **GitHub Actions** so the built site is deployed.)  
    In your repo: **Settings → Pages**. Under "Build and deployment", set **Source** to **GitHub Actions**.
 
 2. **Push to trigger deploy**  
