@@ -1,4 +1,8 @@
 # Build and deploy this Vite app to GitHub Pages (replaces previous site)
+#
+# Required: In repo Settings → Pages, set "Build and deployment" → Source to
+# "GitHub Actions". If you use "Deploy from a branch", the site will show a
+# white page because the repo only has source files, not the built assets.
 name: Deploy to GitHub Pages
 
 on:

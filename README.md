@@ -1,80 +1,53 @@
-# Welcome to your Lovable project
+# Koushik.Portfolio
 
-## Project info
+Personal portfolio site — designed by **Koushik Ahmed Kushal** in 2019.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**Live site:** [koushikl0l.github.io](https://koushikl0l.github.io/)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## Tech stack
 
-**Use Lovable**
+- **Vite** — build tool
+- **React** + **TypeScript**
+- **Tailwind CSS** + **shadcn/ui**
+- **React Router** — client-side routing
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## Run locally
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+git clone https://github.com/Koushikl0l/Koushikl0l.github.io.git
+cd Koushikl0l.github.io
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open [http://localhost:8080](http://localhost:8080).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## Deploy to GitHub Pages
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The site is deployed via **GitHub Actions** when you push to `main`.
 
-## What technologies are used for this project?
+1. In the repo: **Settings → Pages** → set **Source** to **GitHub Actions**.
+2. Push to `main`, or run the workflow manually: **Actions** → **Deploy to GitHub Pages** → **Run workflow**.
 
-This project is built with:
+If the live site is a white page, ensure the Pages source is **GitHub Actions** (not “Deploy from a branch”).
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## Deploy to GitHub Pages (replace your previous site)
+## Scripts
 
-This project is set up to deploy to **GitHub Pages** and replace your previous github.io site.
+| Command        | Description              |
+|----------------|--------------------------|
+| `npm run dev`  | Start dev server         |
+| `npm run build`| Production build         |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint               |
 
-**If the live site shows a white page:** In **Settings → Pages**, set **Source** to **GitHub Actions** (not "Deploy from a branch"). The branch source serves raw source files, so the app script 404s and nothing renders.
+---
 
-1. **Enable GitHub Pages**  
-   (Source must be **GitHub Actions** so the built site is deployed.)  
-   In your repo: **Settings → Pages**. Under "Build and deployment", set **Source** to **GitHub Actions**.
-
-2. **Push to trigger deploy**  
-   Push to `main` (or `master`). The workflow **Deploy to GitHub Pages** will build the app and deploy it.
-
-3. **URLs**  
-   - **Project site:** `https://<your-username>.github.io/<repo-name>/`  
-   - **User/org site** (repo named `username.github.io`): `https://<your-username>.github.io/`
-
-The workflow uses the repo name as the base path for project sites, so assets and routing work correctly.
+© 2019 Koushik Ahmed Kushal. All rights reserved.
